@@ -153,13 +153,55 @@
       </a>
     </div>
   </footer>  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll('#game-opsi article h3').forEach(h3 => {
-        if(h3.innerText.includes('Game Mewarnai Buah')){
-          h3.closest('article').querySelector('a').setAttribute('href','https://trial-mewarnai.netlify.app/');
-          h3.closest('article').querySelector('a').setAttribute('target','_blank');
-        }
-      });
+    // Sisipkan LINK PREVIEW untuk produk "Mewarnai Buah" tanpa mengubah alur/logic katalog/keranjang
+    document.addEventListener('DOMContentLoaded', () => {
+      const PREVIEW_URL = 'https://trial-mewarnai.netlify.app/';
+      const grid = document.getElementById('productGrid');
+
+      function injectPreviewButtons(root){
+        if (!root) return;
+        // Cari semua kartu produk yang judulnya mengandung 'Mewarnai Buah'
+        const cards = Array.from(root.querySelectorAll('div.group'));
+        cards.forEach(card => {
+          const title = card.querySelector('h3');
+          if (!title) return;
+          const name = (title.textContent || '').toLowerCase();
+          if (name.includes('mewarnai buah')) {
+            const actionRow = card.querySelector('div.mt-auto');
+            if (!actionRow) return;
+            // Cegah duplikasi
+            if (actionRow.querySelector('[data-preview-mewarnai]')) return;
+            const preview = document.createElement('a');
+            preview.setAttribute('href', PREVIEW_URL);
+            preview.setAttribute('target', '_blank');
+            preview.setAttribute('rel', 'noopener noreferrer');
+            preview.setAttribute('data-preview-mewarnai', '');
+            preview.className = 'h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50';
+            preview.textContent = 'Preview Game';
+            // Sisipkan sebelum tombol Tambah
+            const addBtn = actionRow.querySelector('button');
+            if (addBtn) {
+              const wrap = document.createElement('div');
+              wrap.className = 'flex items-center gap-2';
+              // Pindahkan harga + tombol ke dalam wrap bersama preview
+              const price = actionRow.querySelector('span');
+              if (price) actionRow.insertBefore(price, addBtn);
+              wrap.appendChild(preview);
+              wrap.appendChild(addBtn);
+              actionRow.appendChild(wrap);
+            } else {
+              actionRow.appendChild(preview);
+            }
+          }
+        });
+      }
+
+      // Injeksi saat awal render
+      injectPreviewButtons(grid);
+
+      // Amati perubahan pada grid (misal saat filter/cari diubah)
+      const obs = new MutationObserver(() => injectPreviewButtons(grid));
+      obs.observe(grid, { childList: true, subtree: true });
     });
   </script></body>
   </html>
