@@ -97,6 +97,16 @@
         <a href="#" onclick="document.getElementById('game').classList.add('hidden')" class="px-4 py-2 rounded-lg border">Kembali</a>
       </div>
     </div>
+  </section>  <!-- EBOOK PAGE (fullscreen) -->  <section id="ebook" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <button data-back class="mb-6 px-4 py-2 rounded-lg border hover:bg-slate-50">← Kembali</button>
+      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Ebook</h2>
+    </div>
+  </section>  <!-- KELAS PAGE (fullscreen) -->  <section id="kelas" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <button data-back class="mb-6 px-4 py-2 rounded-lg border hover:bg-slate-50">← Kembali</button>
+      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Kelas & Webinar</h2>
+    </div>
   </section>  <footer class="border-t">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div>© <span id="year"></span> <span id="brandFooter">GlowandGrow</span>. All rights reserved.</div>
@@ -105,5 +115,25 @@
       </a>
     </div>
   </footer>
+  <script>
+    // Minimal nav: pastikan tombol Ebook / Game / Kelas membuka halaman full-screen, tanpa ubah alur yang lain
+    (function(){
+      const pages = ['ebook','game','kelas'];
+      function hideAll(){ pages.forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.add('hidden'); }); }
+      function showPage(id){ hideAll(); const el=document.getElementById(id); if(el) el.classList.remove('hidden'); }// Hero buttons
+  pages.forEach(id=>{
+    document.querySelectorAll('a[href="#'+id+'"]').forEach(a=>{
+      a.addEventListener('click', function(e){ e.preventDefault(); showPage(id); });
+    });
+  });
+
+  // Back buttons
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('[data-back]');
+    if(btn){ e.preventDefault(); hideAll(); }
+  });
+})();
+
+  </script>
 </body>
-</html>
+              </html>
