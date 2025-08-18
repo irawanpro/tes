@@ -45,86 +45,65 @@
           <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-slate-900">
             GlowandGrow
           </h1>
-          <div class="mt-6 flex flex-col gap-2 items-stretch">
-            <a href="#ebook" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90 leading-none text-center">Ebook</a>
-            <a href="#game" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold shadow-soft hover:opacity-90 leading-none text-center">Game Edukatif</a>
-            <a href="#kelas" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold shadow-soft hover:opacity-90 leading-none text-center">Kelas & Webinar</a>
+          <div class="mt-6 flex flex-col gap-3">
+            <a href="#ebook" class="inline-flex items-center justify-center h-16 rounded-2xl bg-gradient-to-br from-brandPink to-brandPurple text-white font-semibold shadow-soft">Ebook</a>
+            <a href="#game" class="inline-flex items-center justify-center h-16 rounded-2xl bg-gradient-to-br from-brandGreen to-brandYellow text-white font-semibold shadow-soft">Game Edukatif</a>
+            <a href="#kelas" class="inline-flex items-center justify-center h-16 rounded-2xl bg-gradient-to-br from-brandPurple to-brandPink text-white font-semibold shadow-soft">Kelas & Webinar</a>
           </div>
         </div>
       </div>
     </div>
-  </section>  <!-- EBOOK PAGE -->  <section id="ebook" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <button onclick="goBack()" class="mb-6 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300">← Kembali</button>
-      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Ebook</h2>
-    </div>
-  </section>  <!-- GAME EDUKATIF PAGE -->  <section id="game" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <button onclick="goBack()" class="mb-6 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300">← Kembali</button>
-      <h2 class="text-2xl font-bold mb-6 text-center">Pilih Game Edukatif</h2>
-      <div class="grid gap-3">
-        <div class="block p-4 border rounded-xl hover:bg-slate-50 text-center">
-          <div class="font-medium">1. Game Mewarnai Buah</div>
-          <div class="mt-3 flex items-center justify-center gap-2">
-            <a href="https://trial-mewarnai.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview</a>
-            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20membeli%20Game%20Mewarnai%20Buah%20di%20GlowandGrow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
+  </section>  <!-- GAME EDUKATIF -->  <section id="game" class="hidden">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-center text-2xl font-bold mb-8">Game Edukatif</h2>
+      <div class="grid gap-6">
+        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandPink/30 to-brandPurple/30 shadow-soft">
+          <h3 class="font-semibold mb-4">Game Mewarnai Buah</h3>
+          <div class="flex justify-center gap-3">
+            <a href="https://trial-mewarnai.netlify.app/" target="_blank" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Preview</a>
+            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Mewarnai%20Buah" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
           </div>
         </div>
-        <div class="block p-4 border rounded-xl hover:bg-slate-50 text-center">
-        <div class="font-medium">2. Game Pengenalan Huruf Interaktif Visual dan Audio</div>
-        <div class="mt-3 flex items-center justify-center gap-2">
-          <a href="#" title="Coming soon" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview</a>
-          <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20membeli%20Game%20Pengenalan%20Huruf%20Interaktif%20Visual%20dan%20Audio%20di%20GlowandGrow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
+        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandYellow/30 to-brandGreen/30 shadow-soft">
+          <h3 class="font-semibold mb-4">Game Pengenalan Huruf Interaktif Visual & Audio</h3>
+          <div class="flex justify-center gap-3">
+            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
+            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Pengenalan%20Huruf" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
+          </div>
+        </div>
+        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandPurple/30 to-brandPink/30 shadow-soft">
+          <h3 class="font-semibold mb-4">Game Mengenal Hewan Interaktif Visual & Audio</h3>
+          <div class="flex justify-center gap-3">
+            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
+            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Mengenal%20Hewan" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
+          </div>
+        </div>
+        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandGreen/30 to-brandYellow/30 shadow-soft">
+          <h3 class="font-semibold mb-4">Logika Anak Puzzle Warna</h3>
+          <div class="flex justify-center gap-3">
+            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
+            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Puzzle%20Warna" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
+          </div>
+        </div>
+        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandPink/30 to-brandGreen/30 shadow-soft">
+          <h3 class="font-semibold mb-4">Game Fokus & Ketangkasan Anak</h3>
+          <div class="flex justify-center gap-3">
+            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
+            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Fokus%20&%20Ketangkasan" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
+          </div>
         </div>
       </div>
-        <div class="block p-4 border rounded-xl hover:bg-slate-50 text-center">
-        <div class="font-medium">3. Game Mengenal Hewan Interaktif Visual dan Audio</div>
-        <div class="mt-3 flex items-center justify-center gap-2">
-          <a href="#" title="Coming soon" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview</a>
-          <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20membeli%20Game%20Mengenal%20Hewan%20Interaktif%20Visual%20dan%20Audio%20di%20GlowandGrow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
-        </div>
+      <div class="mt-6 text-center">
+        <a href="#" onclick="document.getElementById('game').classList.add('hidden')" class="px-4 py-2 rounded-lg border">Kembali</a>
       </div>
-        <div class="block p-4 border rounded-xl hover:bg-slate-50 text-center">
-        <div class="font-medium">4. Logika Anak Puzzle Warna</div>
-        <div class="mt-3 flex items-center justify-center gap-2">
-          <a href="#" title="Coming soon" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview</a>
-          <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20membeli%20Logika%20Anak%20Puzzle%20Warna%20di%20GlowandGrow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
-        </div>
-      </div>
-        <div class="block p-4 border rounded-xl hover:bg-slate-50 text-center">
-        <div class="font-medium">5. Game Fokus dan Ketangkasan Anak</div>
-        <div class="mt-3 flex items-center justify-center gap-2">
-          <a href="#" title="Coming soon" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview</a>
-          <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20membeli%20Game%20Fokus%20dan%20Ketangkasan%20Anak%20di%20GlowandGrow" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>  <!-- KELAS PAGE -->  <section id="kelas" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <button onclick="goBack()" class="mb-6 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300">← Kembali</button>
-      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Kelas & Webinar</h2>
     </div>
   </section>  <footer class="border-t">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div>© <span id="year"></span> <span id="brandFooter">GlowandGrow</span>. All rights reserved.</div>
+      <a id="waQuick" href="#" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border hover:bg-slate-50">
+        Chat Cepat
+      </a>
     </div>
-  </footer>  <script>
-    const pages = ["ebook","game","kelas"];
-    function hideAll(){
-      pages.forEach(id=>document.getElementById(id).classList.add('hidden'));
-    }
-    function goBack(){
-      hideAll();
-    }
-    pages.forEach(id=>{
-      document.querySelectorAll(`a[href="#${id}"]`).forEach(btn => {
-        btn.addEventListener('click', function(e){
-          e.preventDefault();
-          hideAll();
-          document.getElementById(id).classList.remove('hidden');
-        });
-      });
-    });
-  </script></body>
-                              </html>
+  </footer>
+</body>
+</html>
