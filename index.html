@@ -70,7 +70,7 @@
             GlowandGrow
           </h1>
           <div class="mt-6 flex flex-col gap-3">
-            <a href="#ebook" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90">Ebook</a>
+            <a href="#ebook"$1>Ebook</a>
             <a href="#game" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold shadow-soft hover:opacity-90">Game Edukatif</a>
             <a href="#kelas" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold shadow-soft hover:opacity-90">Kelas & Webinar</a>
           </div>
@@ -91,6 +91,48 @@
         </div>
       </div>
     </div>
+  </section>  <!-- EBOOK SECTION -->  <section id="ebook" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 hidden">
+    <h2 class="text-2xl font-bold mb-6">Pilihan Ebook Menarik untuk Parenting & MPASI</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-5 bg-white rounded-2xl border shadow-soft">
+        <h3 class="font-semibold text-lg">Ebook Resep MPASI Anti Ribet</h3>
+        <p class="text-sm text-slate-600 mt-2">60+ resep sehat untuk bayi dan balita, mudah dipraktikkan.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl border shadow-soft">
+        <h3 class="font-semibold text-lg">Ebook Stimulasi Tumbuh Kembang</h3>
+        <p class="text-sm text-slate-600 mt-2">Panduan aktivitas seru untuk mendukung perkembangan anak.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl border shadow-soft">
+        <h3 class="font-semibold text-lg">Ebook Parenting Islami</h3>
+        <p class="text-sm text-slate-600 mt-2">Tips mendidik anak dengan pendekatan Islami modern.</p>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION: EBOOK OPTIONS -->
+  <section id="ebook" class="bg-slate-50 border-y">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight text-slate-900">Pilih eBook Favoritmu — Praktis, Ilmiah, & Ramah Ibu</h2>
+        <p class="mt-2 text-slate-600">Koleksi eBook parenting & MPASI yang ringkas, aplikatif, dan disusun berdasarkan rekomendasi dokter anak & ahli gizi.</p>
+      </div>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+          <h3 class="font-semibold text-slate-900">eBook MPASI Anti Ribet</h3>
+          <p class="mt-2 text-sm text-slate-600">60+ resep sehat, jadwal makan, dan panduan GTM.</p>
+          <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+        </article>
+        <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+          <h3 class="font-semibold text-slate-900">Checklist Kesiapan MPASI</h3>
+          <p class="mt-2 text-sm text-slate-600">Checklist WHO & menu 7 hari pertama yang aman.</p>
+          <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+        </article>
+        <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+          <h3 class="font-semibold text-slate-900">Panduan Atasi GTM</h3>
+          <p class="mt-2 text-sm text-slate-600">Strategi tanpa memaksa makan + contoh menu harian.</p>
+          <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+        </article>
+      </div>
+    </div>
   </section>  <!-- FILTER & CATALOG -->  <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex flex-wrap items-center gap-3">
       <span class="text-sm font-semibold text-slate-500">Filter:</span>
@@ -106,5 +148,10 @@
         Chat Cepat
       </a>
     </div>
-  </footer>  <!-- (script & logika asli tetap sama) --></body>
-</html>
+  </footer>  <script>
+    function showEbookSection(){
+      document.getElementById('ebook').classList.remove('hidden');
+      document.getElementById('ebook').scrollIntoView({behavior: 'smooth'});
+    }
+  </script>  <!-- (script & logika asli tetap sama) --></body>
+          </html>
