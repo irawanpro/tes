@@ -69,10 +69,9 @@
           <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-slate-900">
             GlowandGrow
           </h1>
-          <div class="mt-6 flex flex-col gap-3">
-            <a href="#ebook"$1 class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90 border-2 border-white/60 ring-1 ring-brandPink/40">Ebook</a>
-            <a href="#game" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold shadow-soft hover:opacity-90">Game Edukatif</a>
-            <a href="#kelas" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold shadow-soft hover:opacity-90">Kelas & Webinar</a>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="#produk" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90">Lihat Produk</a>
+            <a href="#cara-beli" class="inline-flex items-center h-11 px-5 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Cara Beli</a>
           </div>
         </div>
         <div class="relative">
@@ -91,98 +90,59 @@
         </div>
       </div>
     </div>
-  </section>  <!-- EBOOK SECTION -->  <section id="ebook" class="fixed inset-0 z-[60] hidden">
-    <div id="ebookOverlay" class="absolute inset-0 bg-black/40"></div>
-    <div id="ebookPanel" class="absolute right-0 top-0 h-full w-full md:w-[740px] bg-white border-l shadow-2xl translate-x-full transition-all duration-300 ease-out">
-      <div class="h-16 px-4 border-b bg-white flex items-center justify-between">
-        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">Pilih eBook Favoritmu — Praktis, Ilmiah, & Ramah Ibu</h2>
-        <button id="ebookClose" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup">✕</button>
-      </div>
-      <div class="p-5 overflow-y-auto h-[calc(100%-64px)]">
-        <p class="text-slate-600 max-w-3xl">Koleksi eBook parenting & MPASI yang ringkas, aplikatif, dan disusun berdasarkan rekomendasi dokter anak & ahli gizi.</p>
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">eBook MPASI Anti Ribet</h3>
-            <p class="mt-2 text-sm text-slate-600">60+ resep sehat, jadwal makan, dan panduan GTM.</p>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Checklist Kesiapan MPASI</h3>
-            <p class="mt-2 text-sm text-slate-600">Checklist WHO & menu 7 hari pertama yang aman.</p>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Panduan Atasi GTM</h3>
-            <p class="mt-2 text-sm text-slate-600">Strategi tanpa memaksa makan + contoh menu harian.</p>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- SECTION: GAME EDUKATIF (slide) -->
-  <section id="game" class="fixed inset-0 z-[60] hidden">
-    <div id="gameOverlay" class="absolute inset-0 bg-black/40"></div>
-    <div id="gamePanel" class="absolute right-0 top-0 h-full w-full md:w-[740px] bg-white border-l shadow-2xl translate-x-full transition-all duration-300 ease-out">
-      <div class="h-16 px-4 border-b bg-white flex items-center justify-between">
-        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">Game Edukatif</h2>
-        <button id="gameClose" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup">✕</button>
-      </div>
-      <div class="p-5 overflow-y-auto h-[calc(100%-64px)]">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Mewarnai Buah</h3>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Pengenalan Huruf (Audio & Visual)</h3>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Motorik Kasar (Tebak Suara Hewan)</h3>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Logika Anak — Puzzle Warna</h3>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Logika Anak — Line Art</h3>
-            <div class="mt-4 flex items-center gap-2">
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Preview Game</a>
-  <a href="#produk" class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold hover:opacity-90">Beli</a>
-</div>
-          </article>
-        </div>
-      </div>
-    </div>
   </section>  <!-- FILTER & CATALOG -->  <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex flex-wrap items-center gap-3">
       <span class="text-sm font-semibold text-slate-500">Filter:</span>
       <div id="categoryBar" class="flex flex-wrap gap-2"></div>
       <button id="clearFilter" class="ms-auto text-sm text-slate-600 hover:text-slate-900 underline decoration-dotted">Reset filter</button>
     </div><div id="productGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+  </section>  <!-- GAME EDUKATIF OPSI -->  <section id="game-opsi" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-2xl font-bold mb-6">Pilih Game Edukatif</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Game Mewarnai Buah -->
+      <article class="group border rounded-xl p-4 shadow-soft">
+        <h3 class="text-lg font-semibold">Game Mewarnai Buah</h3>
+        <div class="mt-4 flex gap-2">
+          <a href="https://trial-mewarnai.netlify.app/" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-lg bg-brandPurple text-white">Preview Game</a>
+          <a href="#" class="px-3 py-2 rounded-lg border">Beli</a>
+        </div>
+      </article><!-- Game Pengenalan Huruf -->
+  <article class="group border rounded-xl p-4 shadow-soft">
+    <h3 class="text-lg font-semibold">Game Pengenalan Huruf Berbasis Audio dan Visual</h3>
+    <div class="mt-4 flex gap-2">
+      <a href="#" class="px-3 py-2 rounded-lg bg-brandPurple text-white">Preview Game</a>
+      <a href="#" class="px-3 py-2 rounded-lg border">Beli</a>
+    </div>
+  </article>
+
+  <!-- Game Motorik Kasar -->
+  <article class="group border rounded-xl p-4 shadow-soft">
+    <h3 class="text-lg font-semibold">Game Motorik Kasar Visual dan Audio Tebak Suara Hewan</h3>
+    <div class="mt-4 flex gap-2">
+      <a href="#" class="px-3 py-2 rounded-lg bg-brandPurple text-white">Preview Game</a>
+      <a href="#" class="px-3 py-2 rounded-lg border">Beli</a>
+    </div>
+  </article>
+
+  <!-- Game Logika Puzzle Warna -->
+  <article class="group border rounded-xl p-4 shadow-soft">
+    <h3 class="text-lg font-semibold">Game Logika Anak Puzzle Warna</h3>
+    <div class="mt-4 flex gap-2">
+      <a href="#" class="px-3 py-2 rounded-lg bg-brandPurple text-white">Preview Game</a>
+      <a href="#" class="px-3 py-2 rounded-lg border">Beli</a>
+    </div>
+  </article>
+
+  <!-- Game Logika Line Art -->
+  <article class="group border rounded-xl p-4 shadow-soft">
+    <h3 class="text-lg font-semibold">Game Logika Anak Line Art</h3>
+    <div class="mt-4 flex gap-2">
+      <a href="#" class="px-3 py-2 rounded-lg bg-brandPurple text-white">Preview Game</a>
+      <a href="#" class="px-3 py-2 rounded-lg border">Beli</a>
+    </div>
+  </article>
+</div>
 
   </section>  <!-- FOOTER -->  <footer class="border-t">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
@@ -193,86 +153,13 @@
       </a>
     </div>
   </footer>  <script>
-    function showEbookSection(){
-      document.getElementById('ebook').classList.remove('hidden');
-      document.getElementById('ebook').scrollIntoView({behavior: 'smooth'});
-    }
-  </script>  <!-- (script & logika asli tetap sama) -->  <script>
-    // === Ebook slide handlers (tanpa mengubah alur/logic katalog/keranjang) ===
-    (function(){
-      const openBtn = document.querySelector('a[href="#ebook"]');
-      const section = document.getElementById('ebook');
-      const panel = document.getElementById('ebookPanel');
-      const overlay = document.getElementById('ebookOverlay');
-      const closeBtn = document.getElementById('ebookClose');
-      function openEbook(e){ if(e) e.preventDefault(); section.classList.remove('hidden'); requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); }); }
-      function closeEbook(){ panel.classList.add('translate-x-full'); setTimeout(()=> section.classList.add('hidden'), 280); }
-      if (openBtn) openBtn.addEventListener('click', openEbook);
-      if (overlay) overlay.addEventListener('click', closeEbook);
-      if (closeBtn) closeBtn.addEventListener('click', closeEbook);
-      document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape' && !section.classList.contains('hidden')) closeEbook(); });
-    })();
-  </script>  <section id="game" class="fixed inset-0 z-[60] hidden">
-    <div id="gameOverlay" class="absolute inset-0 bg-black/40"></div>
-    <div id="gamePanel" class="absolute right-0 top-0 h-full w-full md:w-[740px] bg-white border-l shadow-2xl translate-x-full transition-all duration-300 ease-out">
-      <div class="h-16 px-4 border-b bg-white flex items-center justify-between">
-        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">Game Edukatif</h2>
-        <button id="gameClose" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup">✕</button>
-      </div>
-      <div class="p-5 overflow-y-auto h-[calc(100%-64px)]">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Mewarnai Buah</h3>
-            <p class="mt-2 text-sm text-slate-600">Belajar warna dan mengenal buah dengan cara seru.</p>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Pengenalan Huruf Audio & Visual</h3>
-            <p class="mt-2 text-sm text-slate-600">Membantu anak mengenal huruf dengan suara dan gambar.</p>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Motorik Kasar Tebak Suara Hewan</h3>
-            <p class="mt-2 text-sm text-slate-600">Anak bergerak sambil menebak suara hewan dengan visual menarik.</p>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Logika Anak Puzzle Warna</h3>
-            <p class="mt-2 text-sm text-slate-600">Melatih logika dan kecerdasan anak dengan puzzle warna.</p>
-          </article>
-          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
-            <h3 class="font-semibold text-slate-900">Game Logika Anak Line Art</h3>
-            <p class="mt-2 text-sm text-slate-600">Mengasah kreativitas dan logika anak dengan line art.</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>  <script>
-    // === Game slide handlers ===
-    (function(){
-      const openBtn = document.querySelector('a[href="#game"]');
-      const section = document.getElementById('game');
-      const panel = document.getElementById('gamePanel');
-      const overlay = document.getElementById('gameOverlay');
-      const closeBtn = document.getElementById('gameClose');
-      function openGame(e){ if(e) e.preventDefault(); section.classList.remove('hidden'); requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); }); }
-      function closeGame(){ panel.classList.add('translate-x-full'); setTimeout(()=> section.classList.add('hidden'), 280); }
-      if (openBtn) openBtn.addEventListener('click', openGame);
-      if (overlay) overlay.addEventListener('click', closeGame);
-      if (closeBtn) closeBtn.addEventListener('click', closeGame);
-      document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape' && !section.classList.contains('hidden')) closeGame(); });
-    })();
-  </script>  <script>
-    // === Game slide handlers (tanpa mengubah alur/logic utama) ===
-    (function(){
-      const openBtn = document.querySelector('a[href="#game"]');
-      const section = document.getElementById('game');
-      const panel = document.getElementById('gamePanel');
-      const overlay = document.getElementById('gameOverlay');
-      const closeBtn = document.getElementById('gameClose');
-      function openGame(e){ if(e) e.preventDefault(); section.classList.remove('hidden'); requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); }); }
-      function closeGame(){ panel.classList.add('translate-x-full'); setTimeout(()=> section.classList.add('hidden'), 280); }
-      if (openBtn) openBtn.addEventListener('click', openGame);
-      if (overlay) overlay.addEventListener('click', closeGame);
-      if (closeBtn) closeBtn.addEventListener('click', closeGame);
-      document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape' && !section.classList.contains('hidden')) closeGame(); });
-    })();
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('#game-opsi article h3').forEach(h3 => {
+        if(h3.innerText.includes('Game Mewarnai Buah')){
+          h3.closest('article').querySelector('a').setAttribute('href','https://trial-mewarnai.netlify.app/');
+          h3.closest('article').querySelector('a').setAttribute('target','_blank');
+        }
+      });
+    });
   </script></body>
   </html>
