@@ -45,34 +45,55 @@
           <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-slate-900">
             GlowandGrow
           </h1>
-          <div class="mt-6 flex items-center gap-3">
-            <a href="#ebook" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90 border-2 border-white/60 ring-1 ring-brandPink/40">Ebook</a>
-            <a href="#game" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold shadow-soft hover:opacity-90">Game Edukatif</a>
-            <a href="#kelas" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold shadow-soft hover:opacity-90">Kelas & Webinar</a>
+          <div class="mt-6 flex flex-col gap-2 items-stretch">
+            <a href="#ebook" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90 leading-none text-center">Ebook</a>
+            <a href="#game" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold shadow-soft hover:opacity-90 leading-none text-center">Game Edukatif</a>
+            <a href="#kelas" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold shadow-soft hover:opacity-90 leading-none text-center">Kelas & Webinar</a>
           </div>
         </div>
       </div>
     </div>
-  </section>  <!-- GAME EDUKATIF PAGE -->  <section id="game" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 hidden">
-    <h2 class="text-2xl font-bold mb-6">Pilih Game Edukatif</h2>
-    <div class="grid gap-4">
-      <a href="https://trial-mewarnai.netlify.app/" target="_blank" class="block p-4 border rounded-xl hover:bg-slate-50">1. Game Mewarnai Buah</a>
-      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">2. Game Pengenalan Huruf Interaktif Visual dan Audio</a>
-      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">3. Game Mengenal Hewan Interaktif Visual dan Audio</a>
-      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">4. Logika Anak Puzzle Warna</a>
-      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">5. Game Fokus dan Ketangkasan Anak</a>
+  </section>  <!-- EBOOK PAGE -->  <section id="ebook" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <button onclick="goBack()" class="mb-6 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300">← Kembali</button>
+      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Ebook</h2>
+    </div>
+  </section>  <!-- GAME EDUKATIF PAGE -->  <section id="game" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <button onclick="goBack()" class="mb-6 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300">← Kembali</button>
+      <h2 class="text-2xl font-bold mb-6 text-center">Pilih Game Edukatif</h2>
+      <div class="grid gap-3">
+        <a href="https://trial-mewarnai.netlify.app/" target="_blank" class="block p-4 border rounded-xl hover:bg-slate-50 text-center">1. Game Mewarnai Buah</a>
+        <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50 text-center">2. Game Pengenalan Huruf Interaktif Visual dan Audio</a>
+        <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50 text-center">3. Game Mengenal Hewan Interaktif Visual dan Audio</a>
+        <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50 text-center">4. Logika Anak Puzzle Warna</a>
+        <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50 text-center">5. Game Fokus dan Ketangkasan Anak</a>
+      </div>
+    </div>
+  </section>  <!-- KELAS PAGE -->  <section id="kelas" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <button onclick="goBack()" class="mb-6 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300">← Kembali</button>
+      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Kelas & Webinar</h2>
     </div>
   </section>  <footer class="border-t">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div>© <span id="year"></span> <span id="brandFooter">GlowandGrow</span>. All rights reserved.</div>
     </div>
   </footer>  <script>
-    // Navigasi sederhana ke halaman game
-    document.querySelectorAll('a[href="#game"]').forEach(btn => {
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        document.querySelector('#game').classList.remove('hidden');
-        window.scrollTo({ top: document.querySelector('#game').offsetTop, behavior: 'smooth' });
+    const pages = ["ebook","game","kelas"];
+    function hideAll(){
+      pages.forEach(id=>document.getElementById(id).classList.add('hidden'));
+    }
+    function goBack(){
+      hideAll();
+    }
+    pages.forEach(id=>{
+      document.querySelectorAll(`a[href="#${id}"]`).forEach(btn => {
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          hideAll();
+          document.getElementById(id).classList.remove('hidden');
+        });
       });
     });
   </script></body>
