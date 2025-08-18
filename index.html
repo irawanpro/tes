@@ -120,8 +120,40 @@
       </div>
     </div>
   </section>
-  <!-- FILTER & CATALOG -->
-  <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <!-- SECTION: GAME EDUKATIF (slide) -->
+  <section id="game" class="fixed inset-0 z-[60] hidden">
+    <div id="gameOverlay" class="absolute inset-0 bg-black/40"></div>
+    <div id="gamePanel" class="absolute right-0 top-0 h-full w-full md:w-[740px] bg-white border-l shadow-2xl translate-x-full transition-all duration-300 ease-out">
+      <div class="h-16 px-4 border-b bg-white flex items-center justify-between">
+        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">Game Edukatif</h2>
+        <button id="gameClose" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup">✕</button>
+      </div>
+      <div class="p-5 overflow-y-auto h-[calc(100%-64px)]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Mewarnai Buah</h3>
+            <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Pengenalan Huruf (Audio & Visual)</h3>
+            <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Motorik Kasar (Tebak Suara Hewan)</h3>
+            <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Logika Anak — Puzzle Warna</h3>
+            <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Logika Anak — Line Art</h3>
+            <a href="#produk" class="mt-4 inline-flex items-center justify-center h-10 px-4 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold hover:opacity-90">Lihat & Beli</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- FILTER & CATALOG -->  <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex flex-wrap items-center gap-3">
       <span class="text-sm font-semibold text-slate-500">Filter:</span>
       <div id="categoryBar" class="flex flex-wrap gap-2"></div>
@@ -155,6 +187,68 @@
       if (overlay) overlay.addEventListener('click', closeEbook);
       if (closeBtn) closeBtn.addEventListener('click', closeEbook);
       document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape' && !section.classList.contains('hidden')) closeEbook(); });
+    })();
+  </script>  <section id="game" class="fixed inset-0 z-[60] hidden">
+    <div id="gameOverlay" class="absolute inset-0 bg-black/40"></div>
+    <div id="gamePanel" class="absolute right-0 top-0 h-full w-full md:w-[740px] bg-white border-l shadow-2xl translate-x-full transition-all duration-300 ease-out">
+      <div class="h-16 px-4 border-b bg-white flex items-center justify-between">
+        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">Game Edukatif</h2>
+        <button id="gameClose" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup">✕</button>
+      </div>
+      <div class="p-5 overflow-y-auto h-[calc(100%-64px)]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Mewarnai Buah</h3>
+            <p class="mt-2 text-sm text-slate-600">Belajar warna dan mengenal buah dengan cara seru.</p>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Pengenalan Huruf Audio & Visual</h3>
+            <p class="mt-2 text-sm text-slate-600">Membantu anak mengenal huruf dengan suara dan gambar.</p>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Motorik Kasar Tebak Suara Hewan</h3>
+            <p class="mt-2 text-sm text-slate-600">Anak bergerak sambil menebak suara hewan dengan visual menarik.</p>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Logika Anak Puzzle Warna</h3>
+            <p class="mt-2 text-sm text-slate-600">Melatih logika dan kecerdasan anak dengan puzzle warna.</p>
+          </article>
+          <article class="group bg-white border rounded-2xl shadow-soft p-5 flex flex-col">
+            <h3 class="font-semibold text-slate-900">Game Logika Anak Line Art</h3>
+            <p class="mt-2 text-sm text-slate-600">Mengasah kreativitas dan logika anak dengan line art.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>  <script>
+    // === Game slide handlers ===
+    (function(){
+      const openBtn = document.querySelector('a[href="#game"]');
+      const section = document.getElementById('game');
+      const panel = document.getElementById('gamePanel');
+      const overlay = document.getElementById('gameOverlay');
+      const closeBtn = document.getElementById('gameClose');
+      function openGame(e){ if(e) e.preventDefault(); section.classList.remove('hidden'); requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); }); }
+      function closeGame(){ panel.classList.add('translate-x-full'); setTimeout(()=> section.classList.add('hidden'), 280); }
+      if (openBtn) openBtn.addEventListener('click', openGame);
+      if (overlay) overlay.addEventListener('click', closeGame);
+      if (closeBtn) closeBtn.addEventListener('click', closeGame);
+      document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape' && !section.classList.contains('hidden')) closeGame(); });
+    })();
+  </script>  <script>
+    // === Game slide handlers (tanpa mengubah alur/logic utama) ===
+    (function(){
+      const openBtn = document.querySelector('a[href="#game"]');
+      const section = document.getElementById('game');
+      const panel = document.getElementById('gamePanel');
+      const overlay = document.getElementById('gameOverlay');
+      const closeBtn = document.getElementById('gameClose');
+      function openGame(e){ if(e) e.preventDefault(); section.classList.remove('hidden'); requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); }); }
+      function closeGame(){ panel.classList.add('translate-x-full'); setTimeout(()=> section.classList.add('hidden'), 280); }
+      if (openBtn) openBtn.addEventListener('click', openGame);
+      if (overlay) overlay.addEventListener('click', closeGame);
+      if (closeBtn) closeBtn.addEventListener('click', closeGame);
+      document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape' && !section.classList.contains('hidden')) closeGame(); });
     })();
   </script></body>
 </html>
