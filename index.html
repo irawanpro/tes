@@ -5,135 +5,41 @@
   <title>GlowandGrow — Template Penjualan</title>
   <meta name="description" content="Website penjualan GlowandGrow dengan keranjang, filter, dan checkout via WhatsApp." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Inter', 'sans-serif']
-          },
-          boxShadow: {
-            soft: '0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05)'
-          },
-          colors: {
-            brandPink: '#F472B6',
-            brandPurple: '#A78BFA',
-            brandGreen: '#34D399',
-            brandYellow: '#FACC15'
-          }
-        }
-      }
-    };
-  </script>
-</head>
-<body class="bg-white text-slate-800 font-display selection:bg-brandPink/40">
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="h-16 flex items-center gap-3">
-        <a href="#" class="flex items-center gap-2 shrink-0" aria-label="Beranda">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brandPink to-brandPurple text-white font-bold shadow-soft">GG</span>
-          <span class="text-lg font-semibold bg-gradient-to-r from-brandPink via-brandPurple to-brandGreen bg-clip-text text-transparent">GlowandGrow</span>
-        </a>
-      </div>
-    </div>
-  </header>  <!-- HERO -->  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-brandPink/10 via-white to-brandGreen/10"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-slate-900">
-            GlowandGrow
-          </h1>
-          <div class="mt-6 flex flex-col gap-3">
-            <a href="#ebook" class="inline-flex items-center justify-center h-16 rounded-2xl bg-gradient-to-br from-brandPink to-brandPurple text-white font-semibold shadow-soft">Ebook</a>
-            <a href="#game" class="inline-flex items-center justify-center h-16 rounded-2xl bg-gradient-to-br from-brandGreen to-brandYellow text-white font-semibold shadow-soft">Game Edukatif</a>
-            <a href="#kelas" class="inline-flex items-center justify-center h-16 rounded-2xl bg-gradient-to-br from-brandPurple to-brandPink text-white font-semibold shadow-soft">Kelas & Webinar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- GAME EDUKATIF -->  <section id="game" class="hidden">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 class="text-center text-2xl font-bold mb-8">Game Edukatif</h2>
-      <div class="grid gap-6">
-        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandPink/30 to-brandPurple/30 shadow-soft">
-          <h3 class="font-semibold mb-4">Game Mewarnai Buah</h3>
-          <div class="flex justify-center gap-3">
-            <a href="https://trial-mewarnai.netlify.app/" target="_blank" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Preview</a>
-            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Mewarnai%20Buah" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
-          </div>
-        </div>
-        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandYellow/30 to-brandGreen/30 shadow-soft">
-          <h3 class="font-semibold mb-4">Game Pengenalan Huruf Interaktif Visual & Audio</h3>
-          <div class="flex justify-center gap-3">
-            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
-            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Pengenalan%20Huruf" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
-          </div>
-        </div>
-        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandPurple/30 to-brandPink/30 shadow-soft">
-          <h3 class="font-semibold mb-4">Game Mengenal Hewan Interaktif Visual & Audio</h3>
-          <div class="flex justify-center gap-3">
-            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
-            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Mengenal%20Hewan" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
-          </div>
-        </div>
-        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandGreen/30 to-brandYellow/30 shadow-soft">
-          <h3 class="font-semibold mb-4">Logika Anak Puzzle Warna</h3>
-          <div class="flex justify-center gap-3">
-            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
-            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Puzzle%20Warna" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
-          </div>
-        </div>
-        <div class="rounded-2xl p-6 text-center bg-gradient-to-br from-brandPink/30 to-brandGreen/30 shadow-soft">
-          <h3 class="font-semibold mb-4">Game Fokus & Ketangkasan Anak</h3>
-          <div class="flex justify-center gap-3">
-            <a href="#" class="px-4 py-2 rounded-lg bg-brandPurple text-white">Coming Soon</a>
-            <a href="https://wa.me/62895383260770?text=Halo%20saya%20ingin%20beli%20Game%20Fokus%20&%20Ketangkasan" target="_blank" class="px-4 py-2 rounded-lg bg-brandGreen text-white">Beli</a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-6 text-center">
-        <a href="#" onclick="document.getElementById('game').classList.add('hidden')" class="px-4 py-2 rounded-lg border">Kembali</a>
-      </div>
-    </div>
-  </section>  <!-- EBOOK PAGE (fullscreen) -->  <section id="ebook" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <button data-back class="mb-6 px-4 py-2 rounded-lg border hover:bg-slate-50">← Kembali</button>
-      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Ebook</h2>
-    </div>
-  </section>  <!-- KELAS PAGE (fullscreen) -->  <section id="kelas" class="hidden fixed inset-0 bg-white z-40 overflow-y-auto">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <button data-back class="mb-6 px-4 py-2 rounded-lg border hover:bg-slate-50">← Kembali</button>
-      <h2 class="text-2xl font-bold mb-6 text-center">Halaman Kelas & Webinar</h2>
-    </div>
-  </section>  <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div>© <span id="year"></span> <span id="brandFooter">GlowandGrow</span>. All rights reserved.</div>
-      <a id="waQuick" href="#" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border hover:bg-slate-50">
-        Chat Cepat
-      </a>
-    </div>
-  </footer>
-  <script>
-    // Minimal nav: pastikan tombol Ebook / Game / Kelas membuka halaman full-screen, tanpa ubah alur yang lain
+    <script>
+    // Router sederhana (SPA) agar klik opsi membuka halaman berikutnya (URL berubah) tanpa menampilkan di bawah
     (function(){
-      const pages = ['ebook','game','kelas'];
-      function hideAll(){ pages.forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.add('hidden'); }); }
-      function showPage(id){ hideAll(); const el=document.getElementById(id); if(el) el.classList.remove('hidden'); }// Hero buttons
-  pages.forEach(id=>{
-    document.querySelectorAll('a[href="#'+id+'"]').forEach(a=>{
-      a.addEventListener('click', function(e){ e.preventDefault(); showPage(id); });
-    });
-  });
-
-  // Back buttons
-  document.addEventListener('click', function(e){
-    const btn = e.target.closest('[data-back]');
-    if(btn){ e.preventDefault(); hideAll(); }
-  });
-})();
-
+      const routes = { '/': 'home', '/ebook': 'ebook', '/game': 'game', '/kelas': 'kelas' };
+      const ids = Object.values(routes);
+      function show(id){ ids.forEach(x=>{ const el = document.getElementById(x); if(!el) return; if(x===id) el.classList.remove('hidden'); else el.classList.add('hidden'); }); }
+      function render(){
+        let path = location.pathname;
+        if (path.length>1 && path.endsWith('/')) path = path.slice(0,-1);
+        const id = routes[path] || 'home';
+        show(id);
+        window.scrollTo(0,0);
+      }
+      // Intercept link clicks to internal routes only
+      document.addEventListener('click', (e)=>{
+        const a = e.target.closest('a[href^="/"]');
+        if (!a) return;
+        const url = a.getAttribute('href');
+        if (!routes[url]) return; // allow non-routed links
+        e.preventDefault();
+        history.pushState({}, '', url);
+        render();
+      });
+      // Back/forward support
+      window.addEventListener('popstate', render);
+      // Back buttons
+      document.addEventListener('click', (e)=>{
+        const btn = e.target.closest('[data-back]');
+        if (!btn) return;
+        e.preventDefault();
+        history.back();
+      });
+      // Initial render
+      render();
+    })();
   </script>
 </body>
-              </html>
+</html>
