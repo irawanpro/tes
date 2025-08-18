@@ -34,33 +34,9 @@
         <a href="#" class="flex items-center gap-2 shrink-0" aria-label="Beranda">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brandPink to-brandPurple text-white font-bold shadow-soft">GG</span>
           <span class="text-lg font-semibold bg-gradient-to-r from-brandPink via-brandPurple to-brandGreen bg-clip-text text-transparent">GlowandGrow</span>
-        </a><div class="ms-auto hidden md:flex items-center gap-3">
-      <div class="relative w-80">
-        <input id="searchInput" type="search" placeholder="Cari produk..." class="w-full h-10 ps-10 pe-3 rounded-xl border bg-white/90 focus:outline-none focus:ring-2 focus:ring-brandPink" />
-        <svg class="absolute left-3 top-2.5 h-5 w-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 3.5a7.5 7.5 0 0013.15 13.15z"/></svg>
+        </a>
       </div>
-      <button id="cartButton" class="relative inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white hover:opacity-90 focus:ring-2 focus:ring-offset-2 focus:ring-brandPink">
-        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 22a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
-        <span>Keranjang</span>
-        <span id="cartCount" class="absolute -top-2 -right-2 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 text-xs font-semibold">0</span>
-      </button>
     </div>
-
-    <!-- Mobile -->
-    <div class="md:hidden ms-auto flex items-center gap-2">
-      <button id="cartButtonMobile" aria-label="Buka keranjang" class="relative p-2 rounded-lg border bg-white">
-        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 22a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
-        <span id="cartCountMobile" class="absolute -top-1.5 -right-1.5 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 text-xs font-semibold text-white">0</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile search -->
-  <div class="md:hidden py-2">
-    <input id="searchInputMobile" type="search" placeholder="Cari produk..." class="w-full h-11 ps-10 pe-3 rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-brandPink" />
-  </div>
-</div>
-
   </header>  <!-- HERO -->  <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-brandPink/10 via-white to-brandGreen/10"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
@@ -70,41 +46,34 @@
             GlowandGrow
           </h1>
           <div class="mt-6 flex items-center gap-3">
-            <a href="#ebook" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90">Ebook</a>
+            <a href="#ebook" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90 border-2 border-white/60 ring-1 ring-brandPink/40">Ebook</a>
             <a href="#game" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold shadow-soft hover:opacity-90">Game Edukatif</a>
             <a href="#kelas" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold shadow-soft hover:opacity-90">Kelas & Webinar</a>
           </div>
         </div>
-        <div class="relative">
-          <div class="aspect-[4/3] rounded-2xl border bg-white shadow-soft grid grid-cols-3 gap-3 p-3">
-            <div class="rounded-xl bg-gradient-to-br from-brandPink/30 to-brandPurple/30"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandYellow/30 to-brandGreen/30"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandPurple/30 to-brandPink/30"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandGreen/30 to-brandYellow/30"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandPink/30 to-brandGreen/30"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandPurple/30 to-brandYellow/30"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandPink/20 to-brandPurple/20"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandYellow/20 to-brandPink/20"></div>
-            <div class="rounded-xl bg-gradient-to-br from-brandGreen/20 to-brandPurple/20"></div>
-          </div>
-          <div class="absolute -bottom-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-soft text-sm border">Checkout via WhatsApp ✔️</div>
-        </div>
       </div>
     </div>
-  </section>  <!-- FILTER & CATALOG -->  <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="flex flex-wrap items-center gap-3">
-      <span class="text-sm font-semibold text-slate-500">Filter:</span>
-      <div id="categoryBar" class="flex flex-wrap gap-2"></div>
-      <button id="clearFilter" class="ms-auto text-sm text-slate-600 hover:text-slate-900 underline decoration-dotted">Reset filter</button>
-    </div><div id="productGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-  </section>  <!-- FOOTER -->  <footer class="border-t">
+  </section>  <!-- GAME EDUKATIF PAGE -->  <section id="game" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 hidden">
+    <h2 class="text-2xl font-bold mb-6">Pilih Game Edukatif</h2>
+    <div class="grid gap-4">
+      <a href="https://trial-mewarnai.netlify.app/" target="_blank" class="block p-4 border rounded-xl hover:bg-slate-50">1. Game Mewarnai Buah</a>
+      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">2. Game Pengenalan Huruf Interaktif Visual dan Audio</a>
+      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">3. Game Mengenal Hewan Interaktif Visual dan Audio</a>
+      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">4. Logika Anak Puzzle Warna</a>
+      <a href="#" class="block p-4 border rounded-xl hover:bg-slate-50">5. Game Fokus dan Ketangkasan Anak</a>
+    </div>
+  </section>  <footer class="border-t">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div>© <span id="year"></span> <span id="brandFooter">GlowandGrow</span>. All rights reserved.</div>
-      <a id="waQuick" href="#" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border hover:bg-slate-50">
-        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.41c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.13-.17.2-.35.22-.64.08-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2-.17-.29-.02-.45.13-.6.13-.13.29-.35.43-.52.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.49-.67-.49h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.62.71.22 1.35.19 1.86.12.57-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.08-.12-.27-.2-.56-.35z"/><path d="M16 3C9.37 3 4 8.37 4 15c0 2.12.56 4.1 1.54 5.83L4 29l8.36-1.51C14.16 28.44 15.06 28.5 16 28.5c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22.5c-.86 0-1.7-.12-2.49-.35l-.18-.06-4.93.89.94-4.79-.09-.18A9.46 9.46 0 016.5 15c0-5.25 4.25-9.5 9.5-9.5s9.5 4.25 9.5 9.5-4.25 9.5-9.5 9.5z"/></svg>
-        Chat Cepat
-      </a>
     </div>
-  </footer>  <!-- (script & logika asli tetap sama) --></body>
-          </html>
+  </footer>  <script>
+    // Navigasi sederhana ke halaman game
+    document.querySelectorAll('a[href="#game"]').forEach(btn => {
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector('#game').classList.remove('hidden');
+        window.scrollTo({ top: document.querySelector('#game').offsetTop, behavior: 'smooth' });
+      });
+    });
+  </script></body>
+</html>
