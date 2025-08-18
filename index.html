@@ -1,194 +1,417 @@
 <!DOCTYPE html><html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Sambung Line - GlowandGrow</title>
-<style>
-  :root{color-scheme: dark}
-  html,body{height:100%;margin:0;background:#0b1220;color:#e6eef8;overflow:hidden;font-family:system-ui,Segoe UI,Roboto,Arial}
-  canvas{display:block;width:100%;height:100%;touch-action:none;background:#071021}
-  #instructions,#overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center;z-index:30}
-  #instructions{background:linear-gradient(180deg,rgba(2,6,23,.94),rgba(2,6,23,.96))}
-  #overlay{display:none;background:rgba(2,6,23,.9)}
-  button{appearance:none;border:0;border-radius:10px;padding:12px 18px;background:#22c55e;color:#071021;font-weight:700;cursor:pointer}
-  #hud{position:fixed;left:12px;top:10px;padding:8px 12px;background:rgba(255,255,255,.03);border-radius:10px;z-index:20;font-weight:700}
-  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#0b1220;color:#e6eef8;padding:8px 12px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;z-index:35}
-  .toast.show{opacity:1}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toko Digital — Template Penjualan</title>
+  <meta name="description" content="Template website penjualan 1 file HTML dengan keranjang, filter, dan checkout via WhatsApp. Cocok untuk jual produk digital atau fisik." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind basic config
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Inter', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Smooth slide-over */
+    .slide-enter { transform: translateX(100%); opacity: 0; }
+    .slide-enter-active { transform: translateX(0); opacity: 1; transition: all .25s ease; }
+    .slide-exit { transform: translateX(0); opacity: 1; }
+    .slide-exit-active { transform: translateX(100%); opacity: 0; transition: all .25s ease; }
+  </style>
 </head>
-<body>
-  <div id="hud">Level 1 / 20</div>
-  <canvas id="game"></canvas>  <div id="instructions">
-    <h1 style="margin:0 0 8px 0">Instruksi Permainan</h1>
-    <p style="max-width:620px;margin:0 0 12px">Tarik satu garis untuk menghubungkan semua titik dalam satu go. Urutan titik bebas — jangan angkat jari sebelum selesai.</p>
-    <small style="opacity:.8">Created by : <b>GlowandGrow</b><br>Contact person : <b>+6289629065679 / Rahma</b></small>
-    <div style="height:18px"></div>
-    <button id="startBtn">Mulai Game</button>
-  </div>  <div id="overlay">
-    <h2 id="overlayTitle">Level Selesai!</h2>
-    <p id="overlayDesc" style="margin:6px 0 12px 0"></p>
-    <div>
-      <button id="nextBtn">Lanjut Level Berikutnya</button>
-      <button id="restartBtn" style="margin-left:8px;background:#38bdf8">Main dari Level 1</button>
+<body class="bg-white text-slate-800 font-display selection:bg-indigo-200/60">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center gap-3">
+        <a href="#" class="flex items-center gap-2 shrink-0" aria-label="Beranda">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-white font-bold shadow-soft">TD</span>
+          <span class="text-lg font-semibold">Toko Digital</span>
+        </a><div class="ms-auto hidden md:flex items-center gap-3">
+      <div class="relative w-80">
+        <input id="searchInput" type="search" placeholder="Cari produk..." class="w-full h-10 ps-10 pe-3 rounded-xl border bg-white/90 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <svg class="absolute left-3 top-2.5 h-5 w-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 3.5a7.5 7.5 0 0013.15 13.15z"/></svg>
+      </div>
+      <button id="cartButton" class="relative inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 22a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+        <span>Keranjang</span>
+        <span id="cartCount" class="absolute -top-2 -right-2 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 text-xs font-semibold">0</span>
+      </button>
     </div>
-  </div>  <div class="toast" id="toast">Belum semua titik tersambung</div><script>
-/* Final game file: 20 levels + landscape lock + event-listener fix + transition */
-// --- Anti-zoom
-window.addEventListener('wheel', e => { if (e.ctrlKey) e.preventDefault(); }, { passive:false });
-['gesturestart','gesturechange','gestureend'].forEach(ev=>window.addEventListener(ev, e=>e.preventDefault(), {passive:false}));
 
-// --- Canvas & board (square letterbox center)
-const canvas = document.getElementById('game');
-const ctx = canvas.getContext('2d');
-let W=0,H=0,DPR=1; // css px
-let board = { x:0, y:0, size:0 };
+    <!-- Mobile -->
+    <div class="md:hidden ms-auto flex items-center gap-2">
+      <button id="cartButtonMobile" aria-label="Buka keranjang" class="relative p-2 rounded-lg border bg-white">
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 22a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+        <span id="cartCountMobile" class="absolute -top-1.5 -right-1.5 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 text-xs font-semibold text-white">0</span>
+      </button>
+    </div>
+  </div>
 
-function setupCanvas(){
-  DPR = Math.max(1, Math.min(2, window.devicePixelRatio||1));
-  const w = Math.floor(window.innerWidth);
-  const h = Math.floor(window.innerHeight);
-  canvas.width = Math.floor(w*DPR);
-  canvas.height = Math.floor(h*DPR);
-  canvas.style.width = w+'px'; canvas.style.height = h+'px';
-  ctx.setTransform(DPR,0,0,DPR,0,0);
-  W = w; H = h;
-  // board square sized to min dimension, centered
-  const s = Math.floor(Math.min(W, H) * 0.92); // leave margin
-  board.size = s; board.x = Math.floor((W - s)/2); board.y = Math.floor((H - s)/2);
-}
-function boardToScreen(p){ return { x: board.x + p.x*board.size, y: board.y + p.y*board.size }; }
-function screenToBoard(px,py){ return { x: (px - board.x)/board.size, y: (py - board.y)/board.size }; }
+  <!-- Mobile search -->
+  <div class="md:hidden py-2">
+    <input id="searchInputMobile" type="search" placeholder="Cari produk..." class="w-full h-11 ps-10 pe-3 rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+  </div>
+</div>
 
-// --- Levels (relative 0..1 coords in board space) 20 patterns
-const levels = [
-  [{x:.2,y:.2},{x:.8,y:.2},{x:.8,y:.8},{x:.2,y:.8}],
-  [{x:.2,y:.3},{x:.5,y:.2},{x:.8,y:.3},{x:.8,y:.7},{x:.5,y:.8},{x:.2,y:.7}],
-  [{x:.2,y:.8},{x:.8,y:.8},{x:.5,y:.2}],
-  [{x:.2,y:.2},{x:.8,y:.8},{x:.8,y:.2},{x:.2,y:.8},{x:.5,y:.5}],
-  [{x:.5,y:.2},{x:.5,y:.8},{x:.2,y:.5},{x:.8,y:.5},{x:.5,y:.5}],
-  [{x:.2,y:.3},{x:.35,y:.6},{x:.5,y:.3},{x:.65,y:.6},{x:.8,y:.3}],
-  [{x:.5,y:.2},{x:.8,y:.5},{x:.5,y:.8},{x:.2,y:.5}],
-  [{x:.5,y:.18},{x:.78,y:.38},{x:.67,y:.78},{x:.33,y:.78},{x:.22,y:.38}],
-  [{x:.3,y:.25},{x:.7,y:.25},{x:.85,y:.55},{x:.7,y:.85},{x:.3,y:.85},{x:.15,y:.55}],
-  [{x:.5,y:.15},{x:.6,y:.45},{x:.9,y:.45},{x:.65,y:.62},{x:.75,y:.9},{x:.5,y:.72},{x:.25,y:.9},{x:.35,y:.62},{x:.1,y:.45},{x:.4,y:.45}],
-  [{x:.2,y:.2},{x:.8,y:.2},{x:.8,y:.8},{x:.3,y:.8},{x:.3,y:.3},{x:.7,y:.3},{x:.7,y:.7},{x:.4,y:.7},{x:.4,y:.4}],
-  [{x:.2,y:.3},{x:.35,y:.2},{x:.5,y:.35},{x:.65,y:.5},{x:.5,y:.65},{x:.35,y:.8},{x:.2,y:.7},{x:.8,y:.7}],
-  [{x:.25,y:.25},{x:.4,y:.35},{x:.7,y:.3},{x:.6,y:.6},{x:.35,y:.7},{x:.15,y:.55},{x:.85,y:.75}],
-  [{x:.25,y:.25},{x:.45,y:.25},{x:.45,y:.4},{x:.6,y:.4},{x:.6,y:.55},{x:.75,y:.55}],
-  [{x:.25,y:.7},{x:.75,y:.7},{x:.75,y:.45},{x:.5,y:.25},{x:.25,y:.45}],
-  [{x:.25,y:.5},{x:.5,y:.35},{x:.75,y:.5},{x:.6,y:.6},{x:.4,y:.6}],
-  [{x:.3,y:.35},{x:.4,y:.25},{x:.5,y:.35},{x:.6,y:.25},{x:.7,y:.35},{x:.5,y:.75}],
-  [{x:.5,y:.15},{x:.7,y:.22},{x:.82,y:.4},{x:.7,y:.68},{x:.5,y:.75},{x:.3,y:.68},{x:.18,y:.4},{x:.3,y:.22}],
-  [{x:.2,y:.35},{x:.35,y:.5},{x:.5,y:.35},{x:.65,y:.5},{x:.8,y:.35}],
-  [{x:.25,y:.25},{x:.5,y:.25},{x:.75,y:.25},{x:.25,y:.5},{x:.5,y:.5},{x:.75,y:.5},{x:.25,y:.75},{x:.5,y:.75},{x:.75,y:.75}]
-];
+  </header>  <!-- HERO -->  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-amber-50"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-slate-900">
+            Jual Produk Digital & Fisik <span class="text-indigo-600">lebih mudah</span>
+          </h1>
+          <p class="mt-4 text-slate-600 text-lg">Template siap pakai: katalog, keranjang, dan checkout via WhatsApp. Cepat online, tanpa backend.</p>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="#produk" class="inline-flex items-center h-11 px-5 rounded-xl bg-indigo-600 text-white font-semibold shadow-soft hover:bg-indigo-700">Lihat Produk</a>
+            <a href="#cara-beli" class="inline-flex items-center h-11 px-5 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Cara Beli</a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+            <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span> Tanpa ribet</div>
+            <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-indigo-500"></span> Mobile friendly</div>
+            <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-amber-500"></span> Gratis & cepat</div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-2xl border bg-white shadow-soft grid grid-cols-3 gap-3 p-3">
+            <!-- Decorative product tiles -->
+            <div class="rounded-xl bg-gradient-to-br from-indigo-100 to-indigo-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-amber-100 to-amber-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-rose-100 to-rose-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-emerald-100 to-emerald-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-sky-100 to-sky-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-fuchsia-100 to-fuchsia-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-lime-100 to-lime-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-pink-100 to-pink-50"></div>
+            <div class="rounded-xl bg-gradient-to-br from-slate-100 to-slate-50"></div>
+          </div>
+          <div class="absolute -bottom-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-soft text-sm border">Checkout via WhatsApp ✔️</div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- FILTER & CATALOG -->  <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="text-sm font-semibold text-slate-500">Filter:</span>
+      <div id="categoryBar" class="flex flex-wrap gap-2"></div>
+      <button id="clearFilter" class="ms-auto text-sm text-slate-600 hover:text-slate-900 underline decoration-dotted">Reset filter</button>
+    </div><div id="productGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-// --- State
-let currentLevel = 0;
-let visited = new Set(); // indices of nodes visited
-let path = []; // array of points in board coords {x,y}
-let activePointerId = null;
-let drawing = false;
+  </section>  <!-- HOW TO BUY -->  <section id="cara-beli" class="bg-slate-50 border-y">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-2xl font-bold">Cara Beli</h2>
+      <ol class="mt-4 grid sm:grid-cols-3 gap-4 text-slate-700">
+        <li class="p-4 bg-white rounded-xl border shadow-soft"><span class="font-semibold">1.</span> Pilih produk & klik <em>Tambah</em>.</li>
+        <li class="p-4 bg-white rounded-xl border shadow-soft"><span class="font-semibold">2.</span> Buka keranjang dan cek pesanan Anda.</li>
+        <li class="p-4 bg-white rounded-xl border shadow-soft"><span class="font-semibold">3.</span> Checkout via WhatsApp, kirim bukti bayar, selesai!</li>
+      </ol>
+    </div>
+  </section>  <!-- TESTIMONI -->  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-2xl font-bold">Testimoni Pelanggan</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <figure class="p-5 bg-white rounded-2xl border shadow-soft">
+        <blockquote class="text-slate-700">“Produk digitalnya lengkap dan membantu. Proses order gampang banget.”</blockquote>
+        <figcaption class="mt-3 text-sm text-slate-500">— Rina, Ibu Bekerja</figcaption>
+      </figure>
+      <figure class="p-5 bg-white rounded-2xl border shadow-soft">
+        <blockquote class="text-slate-700">“Respons cepat via WhatsApp, file langsung dikirim. Recommended!”</blockquote>
+        <figcaption class="mt-3 text-sm text-slate-500">— Budi, Ayah 2 Anak</figcaption>
+      </figure>
+      <figure class="p-5 bg-white rounded-2xl border shadow-soft">
+        <blockquote class="text-slate-700">“Desainnya rapi, enak dilihat di HP. Mantap!”</blockquote>
+        <figcaption class="mt-3 text-sm text-slate-500">— Sari, Content Creator</figcaption>
+      </figure>
+    </div>
+  </section>  <!-- FAQ -->  <section class="bg-slate-50 border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-2xl font-bold">Pertanyaan Umum</h2>
+      <div class="mt-4 space-y-3">
+        <details class="group bg-white rounded-xl border p-4 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between font-medium">Apakah bisa COD?<span class="transition group-open:rotate-180">▾</span></summary>
+          <div class="mt-2 text-slate-700">Untuk produk digital: tidak perlu COD. Produk fisik: kebijakan penjual.</div>
+        </details>
+        <details class="group bg-white rounded-xl border p-4 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between font-medium">Setelah bayar, bagaimana cara menerima file?<span class="transition group-open:rotate-180">▾</span></summary>
+          <div class="mt-2 text-slate-700">File akan dikirim via WhatsApp / email setelah pembayaran terkonfirmasi.</div>
+        </details>
+        <details class="group bg-white rounded-xl border p-4 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between font-medium">Apakah bisa minta invoice?<span class="transition group-open:rotate-180">▾</span></summary>
+          <div class="mt-2 text-slate-700">Bisa. Tulis permintaan invoice saat checkout via WhatsApp.</div>
+        </details>
+      </div>
+    </div>
+  </section>  <!-- FOOTER -->  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>© <span id="year"></span> <span id="brandFooter">Toko Digital</span>. All rights reserved.</div>
+      <a id="waQuick" href="#" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border hover:bg-slate-50">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.41c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.13-.17.2-.35.22-.64.08-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2-.17-.29-.02-.45.13-.6.13-.13.29-.35.43-.52.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.49-.67-.49h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.62.71.22 1.35.19 1.86.12.57-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.08-.12-.27-.2-.56-.35z"/><path d="M16 3C9.37 3 4 8.37 4 15c0 2.12.56 4.1 1.54 5.83L4 29l8.36-1.51C14.16 28.44 15.06 28.5 16 28.5c6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22.5c-.86 0-1.7-.12-2.49-.35l-.18-.06-4.93.89.94-4.79-.09-.18A9.46 9.46 0 016.5 15c0-5.25 4.25-9.5 9.5-9.5s9.5 4.25 9.5 9.5-4.25 9.5-9.5 9.5z"/></svg>
+        Chat Cepat
+      </a>
+    </div>
+  </footer>  <!-- CART DRAWER -->  <div id="cartOverlay" class="fixed inset-0 bg-black/40 hidden" aria-hidden="true"></div>
+  <aside id="cartPanel" class="fixed top-0 right-0 h-full w-full max-w-md bg-white border-l shadow-2xl translate-x-full" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="h-16 px-4 border-b flex items-center justify-between">
+      <h2 id="cartTitle" class="text-lg font-bold">Keranjang</h2>
+      <button id="closeCart" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup keranjang">✕</button>
+    </div><div id="cartItems" class="p-4 overflow-y-auto h-[calc(100%-192px)] divide-y"></div>
 
-const NODE_R = 0.04; // radius in board units
-const PATH_MIN_DIST = 0.006; // minimal distance in board units to push path
+<div class="absolute bottom-0 left-0 right-0 p-4 border-t bg-white space-y-3">
+  <div class="flex items-center justify-between text-slate-700">
+    <span class="font-medium">Subtotal</span>
+    <span id="cartSubtotal" class="font-semibold">Rp0</span>
+  </div>
+  <button id="checkoutBtn" class="w-full h-12 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700">Checkout via WhatsApp</button>
+  <p class="text-xs text-slate-500">Dengan checkout, Anda menyetujui kebijakan toko.</p>
+</div>
 
-// --- Utilities
-function nodes(){ return levels[currentLevel]; }
-function updateHud(){ document.getElementById('hud').textContent = `Level ${currentLevel+1} / ${levels.length}`; }
+  </aside>  <!-- TOAST -->  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 hidden z-50">
+    <div class="px-4 py-2 rounded-xl bg-slate-900 text-white text-sm shadow-soft">Ditambahkan ke keranjang</div>
+  </div>  <script>
+    // ============== KONFIGURASI MEREK & WHATSAPP =================
+    const BRAND_NAME = 'Toko Digital';
+    // Ganti nomor WA ke format internasional tanpa + (contoh: 6281234567890)
+    const WHATSAPP_NUMBER = '6281234567890';
+    // Jika Anda punya link klik cepat (contoh: wa.me/message/XXXX), isi di sini:
+    const WHATSAPP_CLICK_ID = '';
 
-// --- Drawing
-function draw(){
-  ctx.clearRect(0,0,W,H);
-  // background panel
-  ctx.fillStyle = '#071021'; ctx.fillRect(0,0,W,H);
+    // ============== DATA PRODUK (contoh, silakan ganti) =================
+    const PRODUCTS = [
+      { id: 'mpasi-ebook', name: 'eBook Resep MPASI Anti Ribet', price: 45000, category: 'Digital', image: '', desc: '60+ resep MPASI bergizi, lengkap dengan jadwal & tips GTM.' },
+      { id: 'worksheet-makan', name: 'Worksheet Kebiasaan Makan Anak', price: 25000, category: 'Digital', image: '', desc: 'Aktivitas seru agar anak semangat makan. PDF siap cetak.' },
+      { id: 'dongeng-makan', name: 'Dongeng Audio: Asyiknya Makan', price: 30000, category: 'Digital', image: '', desc: 'Audio storytelling untuk membangun kebiasaan makan positif.' },
+      { id: 'game-edu', name: 'Game Edukasi Mewarnai Buah (HTML)', price: 35000, category: 'Digital', image: '', desc: 'Game sederhana untuk belajar warna & nama buah. File HTML.' },
+      { id: 'ramuan-herbal', name: 'Ramuan Herbal Nafsu Makan (Botol)', price: 55000, category: 'Fisik', image: '', desc: 'Herbal alami bantu nafsu makan. BPOM proses. 100 ml.' },
+      { id: 'bundling-hemat', name: 'Bundling Digital Hemat (3 in 1)', price: 99000, category: 'Bundling', image: '', desc: 'Paket eBook MPASI + Worksheet + Dongeng Audio.' }
+    ];
 
-  // board area background
-  ctx.fillStyle = '#041220'; ctx.fillRect(board.x, board.y, board.size, board.size);
+    const CATEGORIES = ['Semua', 'Digital', 'Fisik', 'Bundling'];
 
-  // subtle grid
-  ctx.save(); ctx.beginPath(); ctx.rect(board.x, board.y, board.size, board.size); ctx.clip();
-  ctx.globalAlpha = 0.1; ctx.strokeStyle = '#123449';
-  for(let gx = board.x; gx <= board.x+board.size; gx += 40) { ctx.beginPath(); ctx.moveTo(gx, board.y); ctx.lineTo(gx, board.y+board.size); ctx.stroke(); }
-  for(let gy = board.y; gy <= board.y+board.size; gy += 40) { ctx.beginPath(); ctx.moveTo(board.x, gy); ctx.lineTo(board.x+board.size, gy); ctx.stroke(); }
-  ctx.restore();
+    // ============== STATE =================
+    let activeCategory = 'Semua';
+    let query = '';
+    let cart = {};// {productId: qty}
 
-  // draw path
-  if (path.length > 0){
-    ctx.lineJoin='round'; ctx.lineCap='round'; ctx.lineWidth = Math.max(6, board.size*0.02); ctx.strokeStyle = '#22c55e';
-    ctx.beginPath();
-    const p0 = boardToScreen(path[0]); ctx.moveTo(p0.x, p0.y);
-    for(let i=1;i<path.length;i++){ const ps = boardToScreen(path[i]); ctx.lineTo(ps.x, ps.y); }
-    ctx.stroke();
-  }
+    // ============== UTIL ================
+    const fmtIDR = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n);
 
-  // draw nodes
-  nodes().forEach((n, idx) =>{
-    const s = boardToScreen(n);
-    ctx.beginPath(); ctx.arc(s.x, s.y, NODE_R*board.size, 0, Math.PI*2);
-    ctx.fillStyle = visited.has(idx)? '#22c55e' : '#0ea5e9';
-    ctx.shadowColor = visited.has(idx)? '#22c55e' : '#0ea5e9'; ctx.shadowBlur = visited.has(idx)? 0 : 8; ctx.fill(); ctx.shadowBlur = 0;
-  });
-}
+    function filteredProducts() {
+      return PRODUCTS.filter(p => {
+        const matchesCat = activeCategory === 'Semua' || p.category === activeCategory;
+        const q = query.trim().toLowerCase();
+        const matchesQuery = !q || p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+        return matchesCat && matchesQuery;
+      });
+    }
 
-// --- Input handling (pointer)
-canvas.addEventListener('pointerdown', (e)=>{
-  const rect = canvas.getBoundingClientRect(); const x = e.clientX - rect.left, y = e.clientY - rect.top;
-  if (activePointerId !== null) return; // already handling another pointer
-  const b = screenToBoard(x,y);
-  const hit = nodeIndexAt(b.x, b.y);
-  if (hit !== -1){
-    activePointerId = e.pointerId; canvas.setPointerCapture(activePointerId);
-    drawing = true; visited = new Set([hit]); path = [{x: nodes()[hit].x, y: nodes()[hit].y}]; updateHud(); draw();
-  }
-});
-canvas.addEventListener('pointermove', (e)=>{
-  if (!drawing || e.pointerId !== activePointerId) return; const rect = canvas.getBoundingClientRect(); const x = e.clientX - rect.left, y = e.clientY - rect.top;
-  const b = screenToBoard(x,y);
-  // add intermediate path points if moved enough
-  const last = path[path.length-1]; if (Math.hypot(b.x-last.x, b.y-last.y) > PATH_MIN_DIST) path.push({x:b.x,y:b.y});
-  const hit = nodeIndexAt(b.x, b.y);
-  if (hit !== -1 && !visited.has(hit)){
-    visited.add(hit); // snap to center
-    path.push({x: nodes()[hit].x, y: nodes()[hit].y});
-    if (visited.size === nodes().length){ onWin(); }
-  }
-  draw();
-});
-canvas.addEventListener('pointerup', (e)=>{ if (e.pointerId !== activePointerId) return; endStroke(); });
-canvas.addEventListener('pointercancel', (e)=>{ if (e.pointerId !== activePointerId) return; endStroke(); });
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    function loadCart() {
+      try { cart = JSON.parse(localStorage.getItem('cart')) || {}; } catch { cart = {}; }
+    }
 
-function endStroke(){ drawing = false; if (activePointerId!==null){ try{ canvas.releasePointerCapture(activePointerId); }catch{} } activePointerId=null; if (visited.size < nodes().length){ showToast('Belum semua titik tersambung'); visited = new Set(); path = []; draw(); } }
+    function cartCount() {
+      return Object.values(cart).reduce((a,b)=>a+b,0);
+    }
 
-function nodeIndexAt(bx,by){
-  for(let i=0;i<nodes().length;i++){ const p=nodes()[i]; if (Math.hypot(bx-p.x, by-p.y) <= NODE_R) return i; } return -1;
-}
+    function cartSubtotal() {
+      return Object.entries(cart).reduce((sum, [id, qty]) => {
+        const prod = PRODUCTS.find(p=>p.id===id);
+        return sum + (prod ? prod.price*qty : 0);
+      }, 0);
+    }
 
-// --- Win / level flow
-const overlay = document.getElementById('overlay'); const overlayTitle = document.getElementById('overlayTitle'); const overlayDesc = document.getElementById('overlayDesc'); const nextBtn = document.getElementById('nextBtn'); const restartBtn = document.getElementById('restartBtn');
-function onWin(){ drawing=false; const last = currentLevel === levels.length-1; overlayTitle.textContent = last? 'Semua Level Selesai!' : `Level ${currentLevel+1} Selesai!`; overlayDesc.textContent = last? 'Keren — kamu menuntaskan semua pola.' : `Siap ke Level ${currentLevel+2}?`; nextBtn.style.display = last? 'none':'inline-block'; restartBtn.style.display = last? 'inline-block':'none'; overlay.style.display='flex'; }
-nextBtn.addEventListener('click', ()=>{ overlay.style.display='none'; loadLevel(currentLevel+1); }); restartBtn.addEventListener('click', ()=>{ overlay.style.display='none'; loadLevel(0); });
+    function showToast(msg='Ditambahkan ke keranjang') {
+      const el = document.getElementById('toast');
+      el.querySelector('div').textContent = msg;
+      el.classList.remove('hidden');
+      setTimeout(()=> el.classList.add('hidden'), 1500);
+    }
 
-// --- Toast
-const toastEl = document.getElementById('toast'); let toastTimer=null; function showToast(msg){ toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(()=>toastEl.classList.remove('show'), 1200); }
+    // ============== RENDER UI =================
+    function renderCategories() {
+      const bar = document.getElementById('categoryBar');
+      bar.innerHTML = '';
+      CATEGORIES.forEach(cat => {
+        const btn = document.createElement('button');
+        const active = cat === activeCategory;
+        btn.className = `h-9 px-3 rounded-full border text-sm ${active? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white hover:bg-slate-50'}`;
+        btn.textContent = cat;
+        btn.onclick = ()=>{ activeCategory = cat; renderProducts(); };
+        bar.appendChild(btn);
+      });
+    }
 
-// --- Resize & orientation handlers (keep state)
-function redrawAfterLayout(){ setupCanvas(); draw(); }
-window.addEventListener('resize', ()=>{ setTimeout(redrawAfterLayout, 160); });
-window.addEventListener('orientationchange', async ()=>{ try{ if (screen.orientation?.type?.startsWith('portrait')) await screen.orientation.lock('landscape'); }catch{} setTimeout(redrawAfterLayout, 260); });
+    function productCard(p) {
+      const wrap = document.createElement('div');
+      wrap.className = 'group bg-white border rounded-2xl shadow-soft overflow-hidden flex flex-col';
+      const img = document.createElement('div');
+      img.className = 'aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center';
+      img.innerHTML = `<span class="text-slate-400 text-sm">${p.category}</span>`;
+      wrap.appendChild(img);
 
-// --- Prevent back navigation
-history.replaceState({game:true}, ''); window.addEventListener('popstate', e=>{ if (e.state && e.state.game) { history.pushState({game:true}, ''); draw(); } });
+      const body = document.createElement('div');
+      body.className = 'p-4 flex flex-col gap-3 flex-1';
+      body.innerHTML = `
+        <h3 class="font-semibold text-slate-900">${p.name}</h3>
+        <p class="text-sm text-slate-600">${p.desc}</p>
+        <div class="mt-auto flex items-center justify-between">
+          <span class="text-lg font-bold text-indigo-700">${fmtIDR(p.price)}</span>
+          <button class="h-10 px-4 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700">Tambah</button>
+        </div>
+      `;
+      wrap.appendChild(body);
 
-// --- Load level (only data reset) ---
-function loadLevel(i){ currentLevel = (i + levels.length) % levels.length; visited = new Set(); path = []; updateHud(); draw(); }
+      body.querySelector('button').onclick = () => { addToCart(p.id, 1); };
+      return wrap;
+    }
 
-// --- Start: fullscreen + lock landscape + init canvas
-async function startGameFlow(){ const instr = document.getElementById('instructions'); const elem = document.documentElement; try{ await (elem.requestFullscreen?.call(elem) || elem.webkitRequestFullscreen?.call(elem)); }catch{} try{ await screen.orientation?.lock('landscape'); }catch{} instr.style.display = 'none'; setupCanvas(); updateHud(); loadLevel(0); }
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
+      const items = filteredProducts();
+      if (!items.length) {
+        const empty = document.createElement('div');
+        empty.className = 'col-span-full text-center text-slate-500 border rounded-xl p-8 bg-white';
+        empty.textContent = 'Produk tidak ditemukan.';
+        grid.appendChild(empty);
+        return;
+      }
+      items.forEach(p => grid.appendChild(productCard(p)) );
+    }
 
-document.getElementById('startBtn').addEventListener('click', startGameFlow);
+    function renderCart() {
+      const list = document.getElementById('cartItems');
+      list.innerHTML = '';
+      const entries = Object.entries(cart);
+      if (entries.length === 0) {
+        list.innerHTML = '<div class="p-6 text-center text-slate-500">Keranjang kosong.</div>';
+      } else {
+        entries.forEach(([id, qty]) => {
+          const p = PRODUCTS.find(x=>x.id===id);
+          if (!p) return;
+          const row = document.createElement('div');
+          row.className = 'py-3 flex items-center gap-3';
+          row.innerHTML = `
+            <div class="h-14 w-14 rounded-lg bg-slate-100 flex items-center justify-center text-xs text-slate-500">${p.category}</div>
+            <div class="flex-1 min-w-0">
+              <div class="font-medium truncate">${p.name}</div>
+              <div class="text-sm text-slate-500">${fmtIDR(p.price)}</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="h-8 w-8 rounded-lg border hover:bg-slate-50" aria-label="Kurangi">–</button>
+              <span class="w-6 text-center">${qty}</span>
+              <button class="h-8 w-8 rounded-lg border hover:bg-slate-50" aria-label="Tambah">+</button>
+            </div>
+            <button class="h-8 w-8 rounded-lg border hover:bg-rose-50 text-rose-600" aria-label="Hapus">✕</button>
+          `;
+          const [decBtn, , incBtn] = row.querySelectorAll('button');
+          const delBtn = row.querySelectorAll('button')[3];
+          decBtn.onclick = ()=> addToCart(id, -1);
+          incBtn.onclick = ()=> addToCart(id, +1);
+          delBtn.onclick = ()=> { delete cart[id]; saveCart(); updateCartUI(); };
+          list.appendChild(row);
+        });
+      }
+      document.getElementById('cartSubtotal').textContent = fmtIDR(cartSubtotal());
+    }
 
-// initial layout
-setupCanvas(); updateHud(); draw();
-</script></body>
+    function updateCartUI() {
+      // badges
+      const count = cartCount();
+      document.getElementById('cartCount').textContent = count;
+      document.getElementById('cartCountMobile').textContent = count;
+      renderCart();
+      saveCart();
+    }
+
+    // ============== CART LOGIC =================
+    function addToCart(id, delta=1) {
+      const prev = cart[id] || 0;
+      const next = Math.max(0, prev + delta);
+      if (next === 0) { delete cart[id]; } else { cart[id] = next; }
+      updateCartUI();
+      if (delta > 0) showToast();
+    }
+
+    function openCart() {
+      const overlay = document.getElementById('cartOverlay');
+      const panel = document.getElementById('cartPanel');
+      overlay.classList.remove('hidden');
+      panel.classList.remove('translate-x-full');
+      panel.classList.add('slide-enter-active');
+    }
+    function closeCart() {
+      const overlay = document.getElementById('cartOverlay');
+      const panel = document.getElementById('cartPanel');
+      panel.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+    }
+
+    function buildWhatsAppLink() {
+      // Build order text
+      const lines = [];
+      lines.push(`Halo, saya ingin memesan di *${BRAND_NAME}*:`);
+      for (const [id, qty] of Object.entries(cart)) {
+        const p = PRODUCTS.find(x=>x.id===id);
+        if (!p) continue;
+        lines.push(`• ${qty} x ${p.name} — ${fmtIDR(p.price*qty)}`);
+      }
+      lines.push(`Subtotal: ${fmtIDR(cartSubtotal())}`);
+      lines.push('Nama:');
+      lines.push('Alamat / Email (untuk produk digital):');
+      lines.push('Metode bayar:');
+      const text = encodeURIComponent(lines.join('\n'));
+      if (WHATSAPP_CLICK_ID) return `https://wa.me/message/${WHATSAPP_CLICK_ID}?text=${text}`;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+
+    function checkout() {
+      if (cartCount() === 0) { showToast('Keranjang masih kosong'); return; }
+      const link = buildWhatsAppLink();
+      window.open(link, '_blank');
+    }
+
+    // ============== INIT =================
+    function init() {
+      // brand texts
+      document.querySelectorAll('#brandFooter').forEach(el=> el.textContent = BRAND_NAME);
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // categories
+      renderCategories();
+      renderProducts();
+
+      // search
+      const s1 = document.getElementById('searchInput');
+      const s2 = document.getElementById('searchInputMobile');
+      [s1, s2].forEach(inp => inp && (inp.oninput = (e)=>{ query = e.target.value; renderProducts(); }));
+
+      // filter reset
+      document.getElementById('clearFilter').onclick = ()=>{ activeCategory = 'Semua'; renderCategories(); renderProducts(); };
+
+      // cart buttons
+      document.getElementById('cartButton').onclick = openCart;
+      document.getElementById('cartButtonMobile').onclick = openCart;
+      document.getElementById('closeCart').onclick = closeCart;
+      document.getElementById('cartOverlay').onclick = closeCart;
+      document.getElementById('checkoutBtn').onclick = checkout;
+      document.getElementById('waQuick').onclick = (e)=>{ e.preventDefault(); window.open(buildWhatsAppLink(), '_blank'); };
+
+      // persisted cart
+      loadCart();
+      updateCartUI();
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script></body>
 </html>
