@@ -69,9 +69,11 @@
           <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-slate-900">
             GlowandGrow
           </h1>
-          <div class="mt-6 flex items-center gap-3">
-            <a href="#produk" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90">Lihat Produk</a>
-            <a href="#cara-beli" class="inline-flex items-center h-11 px-5 rounded-xl border font-semibold text-slate-700 hover:bg-slate-50">Cara Beli</a>
+          <div class="mt-6 flex flex-col gap-3">
+            <a href="#produkMenu" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90">Lihat Produk</a>
+            <a href="#ebook" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold shadow-soft hover:opacity-90 border-2 border-white/60 ring-1 ring-brandPink/40">Ebook</a>
+            <a href="#game" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold shadow-soft hover:opacity-90">Game Edukatif</a>
+            <a href="#kelas" class="inline-flex items-center h-11 px-5 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold shadow-soft hover:opacity-90">Kelas & Webinar</a>
           </div>
         </div>
         <div class="relative">
@@ -88,6 +90,21 @@
           </div>
           <div class="absolute -bottom-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-soft text-sm border">Checkout via WhatsApp ✔️</div>
         </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION: PRODUK MENU (slide) -->
+  <section id="produkMenu" class="fixed inset-0 z-[60] hidden">
+    <div id="produkMenuOverlay" class="absolute inset-0 bg-black/40"></div>
+    <div id="produkMenuPanel" class="absolute right-0 top-0 h-full w-full md:w-[640px] bg-white border-l shadow-2xl translate-x-full transition-all duration-300 ease-out">
+      <div class="h-16 px-4 border-b bg-white flex items-center justify-between">
+        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">Pilih Kategori Produk</h2>
+        <button id="produkMenuClose" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup">✕</button>
+      </div>
+      <div class="p-6 space-y-3">
+        <a href="#ebook" class="block w-full h-12 rounded-xl bg-gradient-to-r from-brandPink to-brandPurple text-white font-semibold grid place-items-center hover:opacity-90">Ebook</a>
+        <a href="#game" class="block w-full h-12 rounded-xl bg-gradient-to-r from-brandPurple to-brandGreen text-white font-semibold grid place-items-center hover:opacity-90">Game</a>
+        <a href="#kelas" class="block w-full h-12 rounded-xl bg-gradient-to-r from-brandGreen to-brandYellow text-white font-semibold grid place-items-center hover:opacity-90">Kelas</a>
       </div>
     </div>
   </section>  <!-- FILTER & CATALOG -->  <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -291,5 +308,36 @@
       }
       init();
     })();
+  </script>  <script>
+    // === Produk Menu slide handlers ===
+    (function(){
+      const openBtn = document.querySelector('a[href="#produkMenu"]');
+      const section = document.getElementById('produkMenu');
+      const panel = document.getElementById('produkMenuPanel');
+      const overlay = document.getElementById('produkMenuOverlay');
+      const closeBtn = document.getElementById('produkMenuClose');
+      function openMenu(e){ if(e) e.preventDefault(); section.classList.remove('hidden'); requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); }); }
+      function closeMenu(){ panel.classList.add('translate-x-full'); setTimeout(()=> section.classList.add('hidden'), 280); }
+      if (openBtn) openBtn.addEventListener('click', openMenu);
+      if (overlay) overlay.addEventListener('click', closeMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape' && !section.classList.contains('hidden')) closeMenu(); });
+      // Klik kategori di dalam menu menutup panel, lalu memicu panel target jika perlu
+      section && section.addEventListener('click', (e)=>{
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const target = a.getAttribute('href');
+        closeMenu();
+        if (target === '#ebook' || target === '#game') {
+          setTimeout(()=>{
+            const realBtn = document.querySelector('a[href="'+target+'"]');
+            if (realBtn) {
+              const evt = new Event('click', { bubbles: true });
+              realBtn.dispatchEvent(evt);
+            }
+          }, 320);
+        }
+      });
+    })();
   </script></body>
-        </html>
+                                                                                                                        </html>
