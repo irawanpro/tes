@@ -1,223 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purwadhika Digital Technology School</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purwadhika Digital Technology School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-image: url('assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-image: url('assets/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
 
-        a {
-            user-select: auto;
-            -webkit-user-select: auto;
-            -moz-user-select: auto;
-            -ms-user-select: auto;
-        }
+        a {
+            user-select: auto;
+            -webkit-user-select: auto;
+            -moz-user-select: auto;
+            -ms-user-select: auto;
+        }
 
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-    </style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-bold text-indigo-600">GlowandGrow</h1>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Programs</a>
-                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
-                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Career</a>
-                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
-                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700">
-                            Daftar Sekarang
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-indigo-600">GlowandGrow</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Programs</a>
+                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Career</a>
+                        <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700">
+                            Daftar Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Parenting Seru, Anak Bahagia
-                    <span class="text-yellow-300">Digital Technology</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-                    Temukan tips, produk, dan game edukatif digital yang membuat belajar dan bermain jadi satu
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors">
-                        Lihat Program
-                    </button>
-                    <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                        Konsultasi Gratis
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Parenting Seru, Anak Bahagia
+                    <span class="text-yellow-300">Digital Technology</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
+                    Temukan tips, produk, dan game edukatif digital yang membuat belajar dan bermain jadi satu
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors">
+                        Lihat Program
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                        Konsultasi Gratis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Programs Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Program Bootcamp</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Pilih program yang sesuai dengan minat dan tujuan karir Anda
-                </p>
-            </div>
+    <!-- Programs Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Program Bootcamp</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Pilih program yang sesuai dengan minat dan tujuan karir Anda
+                </p>
+            </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Full Stack Development -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover border border-gray-100">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Full Stack Development</h3>
-                    <p class="text-gray-600 mb-6">
-                        Pelajari JavaScript, React, Node.js, dan database untuk menjadi developer lengkap
-                    </p>
-                    <div class="mb-6">
-                        <span class="text-3xl font-bold text-gray-900">16 Minggu</span>
-                        <span class="text-gray-600 ml-2">Intensif</span>
-                    </div>
-                    <a href="fullstack.html" class="w-full block text-center bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                        Pelajari Lebih Lanjut
-                    </a>
-                </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Full Stack Development -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Full Stack Development</h3>
+                    <p class="text-gray-600 mb-6">
+                        Pelajari JavaScript, React, Node.js, dan database untuk menjadi developer lengkap
+                    </p>
+                    <div class="mb-6">
+                        <span class="text-3xl font-bold text-gray-900">16 Minggu</span>
+                        <span class="text-gray-600 ml-2">Intensif</span>
+                    </div>
+                    <a href="fullstack.html" class="w-full block text-center bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
 
-                <!-- Data Science -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover border border-gray-100">
-                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Data Science</h3>
-                    <p class="text-gray-600 mb-6">
-                        Kuasai Python, Machine Learning, dan analisis data untuk menjadi Data Scientist
-                    </p>
-                    <div class="mb-6">
-                        <span class="text-3xl font-bold text-gray-900">20 Minggu</span>
-                        <span class="text-gray-600 ml-2">Intensif</span>
-                    </div>
-                    <a href="datascience.html" class="w-full block text-center bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                        Pelajari Lebih Lanjut
-                    </a>
-                </div>
+                <!-- Data Science -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Data Science</h3>
+                    <p class="text-gray-600 mb-6">
+                        Kuasai Python, Machine Learning, dan analisis data untuk menjadi Data Scientist
+                    </p>
+                    <div class="mb-6">
+                        <span class="text-3xl font-bold text-gray-900">20 Minggu</span>
+                        <span class="text-gray-600 ml-2">Intensif</span>
+                    </div>
+                    <a href="datascience.html" class="w-full block text-center bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
 
-                <!-- Digital Marketing -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover border border-gray-100">
-                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Digital Marketing</h3>
-                    <p class="text-gray-600 mb-6">
-                        Pelajari SEO, SEM, Social Media, dan Analytics untuk menjadi Digital Marketer
-                    </p>
-                    <div class="mb-6">
-                        <span class="text-3xl font-bold text-gray-900">12 Minggu</span>
-                        <span class="text-gray-600 ml-2">Intensif</span>
-                    </div>
-                    <a href="digitalmarketing.html" class="w-full block text-center bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                        Pelajari Lebih Lanjut
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Digital Marketing -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Digital Marketing</h3>
+                    <p class="text-gray-600 mb-6">
+                        Pelajari SEO, SEM, Social Media, dan Analytics untuk menjadi Digital Marketer
+                    </p>
+                    <div class="mb-6">
+                        <span class="text-3xl font-bold text-gray-900">12 Minggu</span>
+                        <span class="text-gray-600 ml-2">Intensif</span>
+                    </div>
+                    <a href="digitalmarketing.html" class="w-full block text-center bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- CTA Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Siap Memulai Karir Baru di Teknologi?
-            </h2>
-            <p class="text-xl mb-8 text-gray-100">
-                Bergabunglah dengan ribuan alumni yang telah sukses berkarir di perusahaan teknologi ternama
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors">
-                    Daftar Bootcamp
-                </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                    Download Syllabus
-                </button>
-            </div>
-        </div>
-    </section>
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Siap Memulai Karir Baru di Teknologi?
+            </h2>
+            <p class="text-xl mb-8 text-gray-100">
+                Bergabunglah dengan ribuan alumni yang telah sukses berkarir di perusahaan teknologi ternama
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors">
+                    Daftar Bootcamp
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                    Download Syllabus
+                </button>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">Purwadhika</h3>
-                    <p class="text-gray-400 mb-4">
-                        Digital Technology School yang menghasilkan talenta teknologi terbaik Indonesia
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Program</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="fullstack.html" class="hover:text-white">Full Stack Development</a></li>
-                        <li><a href="datascience.html" class="hover:text-white">Data Science</a></li>
-                        <li><a href="digitalmarketing.html" class="hover:text-white">Digital Marketing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Perusahaan</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Tentang Kami</a></li>
-                        <li><a href="#" class="hover:text-white">Karir</a></li>
-                        <li><a href="#" class="hover:text-white">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Kontak</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>📧 info@purwadhika.com</li>
-                        <li>📱 +62 21 1234 5678</li>
-                        <li>📍 Jakarta, Indonesia</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Purwadhika</h3>
+                    <p class="text-gray-400 mb-4">
+                        Digital Technology School yang menghasilkan talenta teknologi terbaik Indonesia
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Program</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="fullstack.html" class="hover:text-white">Full Stack Development</a></li>
+                        <li><a href="datascience.html" class="hover:text-white">Data Science</a></li>
+                        <li><a href="digitalmarketing.html" class="hover:text-white">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Karir</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 info@purwadhika.com</li>
+                        <li>📱 +62 21 1234 5678</li>
+                        <li>📍 Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
 
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Purwadhika Digital Technology School. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Purwadhika Digital Technology School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
