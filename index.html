@@ -7,10 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; user-select: none; }
         .gradient-bg { background: linear-gradient(135deg, #000000 0%, #000000 100%); }
         .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .unselectable { user-select: none; }
     </style>
 </head>
 <body class="bg-black">
@@ -18,16 +19,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0">
+                    <div class="flex-shrink-0 unselectable">
                         <h1 class="text-2xl font-bold text-yellow-400">Purwadhika</h1>
                     </div>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium">Programs</a>
-                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium">About</a>
-                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium">Career</a>
-                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium unselectable">Programs</a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium unselectable">About</a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium unselectable">Career</a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-400 px-3 py-2 text-sm font-medium unselectable">Contact</a>
                         <button class="bg-yellow-400 text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-yellow-500">
                             Daftar Sekarang
                         </button>
@@ -39,7 +40,7 @@
 
     <section class="bg-black text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
+            <div class="text-center unselectable">
                 <img src="assets/images/hero-image.png" alt="Hero Image" class="mx-auto mb-8 w-32 h-auto">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">
                     Transform Your Career in
@@ -60,7 +61,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-black text-white">
+    <section class="py-20 bg-black text-white unselectable">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Program Bootcamp</h2>
@@ -128,7 +129,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-gray-900 text-white">
+    <section class="py-20 bg-gray-900 text-white unselectable">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Mengapa Pilih Purwadhika?</h2>
@@ -170,7 +171,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-black text-white">
+    <section class="py-20 bg-black text-white unselectable">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Success Stories</h2>
@@ -226,7 +227,7 @@
         </div>
     </section>
 
-    <section class="bg-black text-white py-20">
+    <section class="bg-black text-white py-20 unselectable">
         <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-yellow-400">
                 Siap Memulai Karir Baru di Teknologi?
@@ -245,7 +246,7 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12 unselectable">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
