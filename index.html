@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purwadhika Digital Technology School</title>
+    <title>GlowandGrow - Parenting Digital Technology</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -12,6 +12,7 @@
         .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .unselectable { user-select: none; }
+        #games-section { display: none; }
     </style>
 </head>
 <body class="bg-black">
@@ -37,212 +38,279 @@
             </div>
         </div>
     </nav>
+    
+    <div id="main-content">
+        <section class="bg-black text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center unselectable">
+                    <img src="assets/images/hero-image.png" alt="Hero Image" class="mx-auto mb-8 w-32 h-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Tempatnya Orang Tua & Anak Tumbuh Bersama
+                        <span class="text-yellow-400">- Parenting Digital Technology</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
+                        Temukan inspirasi parenting, tips mendidik anak, dan game edukatif interaktif yang membuat belajar jadi pengalaman seru.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/62895383260770?text=halo%20admin%20GlowandGrow%2C%20saya%20mau%20konsultasi." class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-black transition-colors">
+                            Konsultasi Gratis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="bg-black text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center unselectable">
-                <img src="assets/images/hero-image.png" alt="Hero Image" class="mx-auto mb-8 w-32 h-auto">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Tempatnya Orang Tua & Anak Tumbuh Bersama
-                    <span class="text-yellow-400">- Parenting Digital Technology</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
-                    Temukan inspirasi parenting, tips mendidik anak, dan game edukatif interaktif yang membuat belajar jadi pengalaman seru.
+        <section class="py-20 bg-black text-white unselectable">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Serial Game Edukatif</h2>
+                    <p class="text-xl text-white max-w-2xl mx-auto">
+                        Lihat dan coba trial game dari kami, Dan pilih game yang sesuai dengan kebutuhan perkembangan buah hati anda
+                    </p>
+                </div>
+                  
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                        <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Coba Trial Game Edukatif</h3>
+                        <p class="text-gray-300 mb-6">
+                            Game Auditori, Fokus, Logika dan Pengenalan Huruf. Menunjang stimulasi auditori, sensor motorik halus pada buah hati
+                        </p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold text-yellow-400">RASAKAN PERUBAHANNYA</span>
+                            <span class="text-gray-400 ml-2"></span>
+                        </div>
+                        <button onclick="showGames()" class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                            CEK DISINI
+                        </button>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                        <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Data Science</h3>
+                        <p class="text-gray-300 mb-6">
+                            Kuasai Python, Machine Learning, dan analisis data untuk menjadi Data Scientist
+                        </p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold text-yellow-400">20 Minggu</span>
+                            <span class="text-gray-400 ml-2">Intensif</span>
+                        </div>
+                        <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                            Pelajari Lebih Lanjut
+                        </button>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                        <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Digital Marketing</h3>
+                        <p class="text-gray-300 mb-6">
+                            Pelajari SEO, SEM, Social Media, dan Analytics untuk menjadi Digital Marketer
+                        </p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold text-yellow-400">12 Minggu</span>
+                            <span class="text-gray-400 ml-2">Intensif</span>
+                        </div>
+                        <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                            Pelajari Lebih Lanjut
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gray-900 text-white unselectable">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Mengapa Pilih Purwadhika?</h2>
+                </div>
+                  
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">👨‍🏫</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Instruktur Berpengalaman</h3>
+                        <p class="text-gray-400">Belajar dari praktisi industri dengan pengalaman 10+ tahun</p>
+                    </div>
+                      
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">💼</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Job Guarantee</h3>
+                        <p class="text-gray-400">Garansi kerja atau uang kembali 100%</p>
+                    </div>
+                      
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🏢</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Partner Perusahaan</h3>
+                        <p class="text-gray-400">Kerjasama dengan 500+ perusahaan teknologi</p>
+                    </div>
+                      
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🎯</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Kurikulum Terkini</h3>
+                        <p class="text-gray-400">Materi selalu update mengikuti tren industri</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-black text-white unselectable">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Success Stories</h2>
+                    <p class="text-xl text-white">Kisah sukses alumni yang telah berkarir di perusahaan ternama</p>
+                </div>
+                  
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
+                                A
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-white">Andi Pratama</h4>
+                                <p class="text-gray-400 text-sm">Full Stack Developer di Tokopedia</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "Purwadhika mengubah hidup saya. Dari background non-IT, sekarang saya bekerja sebagai developer di unicorn Indonesia."
+                        </p>
+                    </div>
+                      
+                    <div class="bg-gray-900 rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
+                                S
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-white">Sari Dewi</h4>
+                                <p class="text-gray-400 text-sm">Data Scientist di Gojek</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "Program Data Science di Purwadhika sangat komprehensif. Sekarang saya bisa menganalisis data untuk jutaan pengguna."
+                        </p>
+                    </div>
+                      
+                    <div class="bg-gray-900 rounded-xl p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
+                                R
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-white">Rizki Ahmad</h4>
+                                <p class="text-gray-400 text-sm">Digital Marketing Manager di Shopee</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "Kurikulum digital marketing yang praktis dan langsung applicable. ROI campaign saya meningkat 300%!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-black text-white py-20 unselectable">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-yellow-400">
+                    Siap Memulai Karir Baru di Teknologi?
+                </h2>
+                <p class="text-xl mb-8 text-gray-300">
+                    Bergabunglah dengan ribuan alumni yang telah sukses berkarir di perusahaan teknologi ternama
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors">
+                        Daftar Bootcamp
+                    </button>
                     <a href="https://wa.me/62895383260770?text=halo%20admin%20GlowandGrow%2C%20saya%20mau%20konsultasi." class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-black transition-colors">
-                        Konsultasi Gratis
+                        Download Syllabus
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <section class="py-20 bg-black text-white unselectable">
+    <section id="games-section" class="py-20 unselectable">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Serial Game Edukatif</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Pilihan Game Edukatif</h2>
                 <p class="text-xl text-white max-w-2xl mx-auto">
-                    Lihat dan coba trial game dari kami, Dan pilih game yang sesuai dengan kebutuhan perkembangan buah hati anda
+                    Rasakan pengalaman belajar yang menyenangkan untuk buah hati Anda.
                 </p>
             </div>
               
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
-                    <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Coba Trial Game Edukatif</h3>
+                    <h3 class="text-2xl font-bold text-white mb-4">Game Menebak Suara Hewan</h3>
                     <p class="text-gray-300 mb-6">
-                        Game Auditori, Fokus, Logika dan Pengenalan Huruf. Menunjang stimulasi auditori, sensor motorik halus pada buah hati
+                        Latih pendengaran dan pengetahuan anak tentang berbagai jenis hewan melalui suara yang interaktif.
                     </p>
-                    <div class="mb-6">
-                        <span class="text-3xl font-bold text-yellow-400">RASAKAN PERUBAHANNYA</span>
-                        <span class="text-gray-400 ml-2"></span>
-                    </div>
                     <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
-                        CEK DISINI
+                        PREVIEW
                     </button>
                 </div>
                 <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
-                    <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Data Science</h3>
+                    <h3 class="text-2xl font-bold text-white mb-4">Game Pengenalan Huruf</h3>
                     <p class="text-gray-300 mb-6">
-                        Kuasai Python, Machine Learning, dan analisis data untuk menjadi Data Scientist
+                        Mempermudah anak dalam mengenal huruf dan menyusunnya menjadi kata-kata sederhana.
                     </p>
-                    <div class="mb-6">
-                        <span class="text-3xl font-bold text-yellow-400">20 Minggu</span>
-                        <span class="text-gray-400 ml-2">Intensif</span>
-                    </div>
                     <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
-                        Pelajari Lebih Lanjut
+                        PREVIEW
                     </button>
                 </div>
                 <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
-                    <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Digital Marketing</h3>
+                    <h3 class="text-2xl font-bold text-white mb-4">Game Mewarnai Buah</h3>
                     <p class="text-gray-300 mb-6">
-                        Pelajari SEO, SEM, Social Media, dan Analytics untuk menjadi Digital Marketer
+                        Kembangkan kreativitas dan motorik halus anak melalui kegiatan mewarnai berbagai macam buah.
                     </p>
-                    <div class="mb-6">
-                        <span class="text-3xl font-bold text-yellow-400">12 Minggu</span>
-                        <span class="text-gray-400 ml-2">Intensif</span>
-                    </div>
                     <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
-                        Pelajari Lebih Lanjut
+                        PREVIEW
+                    </button>
+                </div>
+                <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-4">Game Susun Puzzle Warna</h3>
+                    <p class="text-gray-300 mb-6">
+                        Latih kemampuan logika dan pengenalan warna dengan menyusun puzzle yang menarik.
+                    </p>
+                    <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                        PREVIEW
+                    </button>
+                </div>
+                <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-4">Game Melatih Fokus</h3>
+                    <p class="text-gray-300 mb-6">
+                        Meningkatkan konsentrasi dan ketelitian anak dengan serangkaian tantangan yang seru.
+                    </p>
+                    <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                        PREVIEW
                     </button>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-gray-900 text-white unselectable">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Mengapa Pilih Purwadhika?</h2>
-            </div>
-              
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">👨‍🏫</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Instruktur Berpengalaman</h3>
-                    <p class="text-gray-400">Belajar dari praktisi industri dengan pengalaman 10+ tahun</p>
-                </div>
-                  
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">💼</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Job Guarantee</h3>
-                    <p class="text-gray-400">Garansi kerja atau uang kembali 100%</p>
-                </div>
-                  
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🏢</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Partner Perusahaan</h3>
-                    <p class="text-gray-400">Kerjasama dengan 500+ perusahaan teknologi</p>
-                </div>
-                  
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🎯</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Kurikulum Terkini</h3>
-                    <p class="text-gray-400">Materi selalu update mengikuti tren industri</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-black text-white unselectable">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Success Stories</h2>
-                <p class="text-xl text-white">Kisah sukses alumni yang telah berkarir di perusahaan ternama</p>
-            </div>
-              
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 rounded-xl p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
-                            A
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-white">Andi Pratama</h4>
-                            <p class="text-gray-400 text-sm">Full Stack Developer di Tokopedia</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">
-                        "Purwadhika mengubah hidup saya. Dari background non-IT, sekarang saya bekerja sebagai developer di unicorn Indonesia."
-                    </p>
-                </div>
-                  
-                <div class="bg-gray-900 rounded-xl p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
-                            S
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-white">Sari Dewi</h4>
-                            <p class="text-gray-400 text-sm">Data Scientist di Gojek</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">
-                        "Program Data Science di Purwadhika sangat komprehensif. Sekarang saya bisa menganalisis data untuk jutaan pengguna."
-                    </p>
-                </div>
-                  
-                <div class="bg-gray-900 rounded-xl p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
-                            R
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-white">Rizki Ahmad</h4>
-                            <p class="text-gray-400 text-sm">Digital Marketing Manager di Shopee</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 italic">
-                        "Kurikulum digital marketing yang praktis dan langsung applicable. ROI campaign saya meningkat 300%!"
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-black text-white py-20 unselectable">
-        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-yellow-400">
-                Siap Memulai Karir Baru di Teknologi?
-            </h2>
-            <p class="text-xl mb-8 text-gray-300">
-                Bergabunglah dengan ribuan alumni yang telah sukses berkarir di perusahaan teknologi ternama
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors">
-                    Daftar Bootcamp
+            
+            <div class="mt-12 text-center">
+                <button onclick="showMain()" class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-black transition-colors">
+                    Kembali
                 </button>
-                <a href="https://wa.me/62895383260770?text=halo%20admin%20GlowandGrow%2C%20saya%20mau%20konsultasi." class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-black transition-colors">
-                    Download Syllabus
-                </a>
             </div>
         </div>
     </section>
-
+    
     <footer class="bg-gray-900 text-white py-12 unselectable">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
@@ -286,6 +354,20 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        function showGames() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('games-section').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showMain() {
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('games-section').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9783724df2818beb',t:'MTc1NjcxNTg1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
