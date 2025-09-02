@@ -12,7 +12,7 @@
         .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .unselectable { user-select: none; }
-        #games-section { display: none; }
+        #games-section, #articles-section { display: none; }
     </style>
 </head>
 <body class="bg-black">
@@ -102,7 +102,7 @@
                             <span class="text-3xl font-bold text-yellow-400">BERTUMBUH DAN BERKEMBANG BERSAMA</span>
                             <span class="text-gray-400 ml-2"></span>
                         </div>
-                        <button class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                        <button onclick="showArticles()" class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
                             BACA DISINI
                         </button>
                     </div>
@@ -310,6 +310,53 @@
             </div>
         </div>
     </section>
+
+    <section id="articles-section" class="py-20 unselectable">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Artikel Parenting</h2>
+                <p class="text-xl text-white max-w-2xl mx-auto">
+                    Kumpulan artikel inspiratif untuk membantu Anda dalam perjalanan parenting.
+                </p>
+            </div>
+              
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-4">5 Cara Mendidik Anak Tanpa Kekerasan</h3>
+                    <p class="text-gray-300 mb-6">
+                        Temukan pendekatan positif dalam mendisiplinkan anak agar tumbuh menjadi pribadi yang bahagia dan mandiri.
+                    </p>
+                    <a href="#" class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors text-center">
+                        BACA ARTIKEL
+                    </a>
+                </div>
+                <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-4">Teknologi dan Anak: Keseimbangan yang Sehat</h3>
+                    <p class="text-gray-300 mb-6">
+                        Pelajari bagaimana memperkenalkan teknologi secara bijak untuk mendukung perkembangan anak di era digital.
+                    </p>
+                    <a href="#" class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors text-center">
+                        BACA ARTIKEL
+                    </a>
+                </div>
+                <div class="bg-gray-900 rounded-xl shadow-lg p-8 card-hover border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-4">Pentingnya Komunikasi Efektif dengan Anak</h3>
+                    <p class="text-gray-300 mb-6">
+                        Bangun fondasi hubungan yang kuat dengan anak Anda melalui komunikasi yang terbuka dan penuh empati.
+                    </p>
+                    <a href="#" class="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors text-center">
+                        BACA ARTIKEL
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button onclick="showMain()" class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-black transition-colors">
+                    Kembali
+                </button>
+            </div>
+        </div>
+    </section>
     
     <footer class="bg-gray-900 text-white py-12 unselectable">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -358,16 +405,24 @@
     <script>
         function showGames() {
             document.getElementById('main-content').style.display = 'none';
+            document.getElementById('articles-section').style.display = 'none';
             document.getElementById('games-section').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showArticles() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('games-section').style.display = 'none';
+            document.getElementById('articles-section').style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showMain() {
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('games-section').style.display = 'none';
+            document.getElementById('articles-section').style.display = 'none';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9783724df2818beb',t:'MTc1NjcxNTg1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
